@@ -17,6 +17,15 @@
             Réunion 10 : active, 04-12-2024, 1d
             Réunion 11 : active, 08-12-2024, 1d
 
+        section Tâches 
+            Création du projet : done, 02-10-2024, 7d
+            Téléchargement de données : active, 09-10-2024, 1d
+            Création du duagramme de Gantt :  active, 12-10-2024, 2d
+            Rédaction du README : active, 16-10-2024, 2d
+            Création de la carte : active, 30-10-2024, 15d
+            Création de la vidéo : active, 06-11-2024, 15d
+            Slides et site web : active, 20-11-2024, 20d
+
         section Evaluation 
             Evaluation de mi-parcours : crit, b, 25-10-2024, 1d
             Finalisation du projet : crit, b, 10-12-2024, 1d
