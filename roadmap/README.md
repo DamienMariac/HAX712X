@@ -13,7 +13,7 @@ Un classique
 ### Pandas
 Traiter les données
 
-### Beautifulsoup
+### Beautifulsoup ou pooch (jsp encore)
 Pour scraper les pages internets
 
 ### Folium

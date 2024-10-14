@@ -1,28 +1,14 @@
-from bs4 import BeautifulSoup
-import requests
-import os
+import pooch
 
+# URL du fichier CSV
+url = 'https://data.montpellier3m.fr/sites/default/files/ressources/MMM_MMM_GeolocCompteurs.csv'
 
-url = 'https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo'
+# Téléchargement avec Pooch
+file_path = pooch.retrieve(
+    url=url,
+    known_hash=None, 
+    fname='comptage-velo-pieton.csv',
+    path='./data' 
+)
 
-response = requests.get(url)
-
-
-
-soup = BeautifulSoup(response.text, 'html.parser')
-
-for link in soup.find_all('a', href=True):
-        href = link['href']
-        if href.endswith('.csv'):  
-            csv_url = href
-            if not csv_url.startswith('http'): 
-                csv_url = 'https://data.montpellier3m.fr' + csv_url
-            
-
-            csv_response = requests.get(csv_url)
-            file_name = os.path.join('data', csv_url.split('/')[-1])
-            
-
-            with open(file_name, 'wb') as file:
-                file.write(csv_response.content)
-            print(f"Fichier téléchargé : {file_name}")
+print(f"Fichier téléchargé et enregistré ici : {file_path}")
