@@ -3,18 +3,25 @@ import pooch
 from bs4 import BeautifulSoup
 import requests
 
-url = 'https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo'
+url = 'https://data.montpellier3m.fr/dataset/courses-des-velos-velomagg-de-montpellier-mediterranee-metropole'
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
 
 #on soupe
 
-json_links = []
+# json_links = []
+# for link in soup.find_all('a', href=True):
+#     href = link['href']
+#     if href.endswith('.json'):
+#         json_links.append(href)
+
+
+csv_list = []
 for link in soup.find_all('a', href=True):
     href = link['href']
-    if href.endswith('.json'):
-        json_links.append(href)
+    if href.endswith('.csv'):
+        csv_list.append(href)
 
 
 
@@ -35,7 +42,7 @@ for file in os.listdir(data_folder):
 
 #on ajoute
 
-for url in json_links:
+for url in csv_list:
     file_name = url.split('/')[-1]
     file_path = pooch.retrieve(
         url=url,
