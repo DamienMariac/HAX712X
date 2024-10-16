@@ -1,8 +1,12 @@
-# Projet de groupe HAX712X
+# Projet de groupe HAX712X (BIKEMAP)
 
 ## Description du projet
 
-Notre projet consiste à la réalisation d'un site internet.
+Notre projet consiste à la réalisation d'un site internet autour de la circulation à vélo dans Montpellier. 
+
+Pour ce faire, nous avons utilisés les données mise à disposition par la Tam.
+
+L'objectif étant de faire une carte interactive predisant le trafic et une vidéo montrant les trajets effectués sur une date donnée.
 
 
 ## Package utilisé
@@ -13,8 +17,13 @@ Un classique
 ### Pandas
 Traiter les données
 
-### Beautifulsoup ou pooch (jsp encore)
+### Beautifulsoup
 Pour scraper les pages internets
+
+### pooch
+
 
 ### Folium
 Une belle carte
+
+
