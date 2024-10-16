@@ -2,4 +2,4 @@ numpy==1.26.4
 pandas==2.2.3
 pooch==1.8.2
 beautifulsoup==4.12.3
-folium==0.14.0
+folium==0.17.0
