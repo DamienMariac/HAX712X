@@ -19,12 +19,13 @@
 
         section Tâches 
             Création du projet : done, 02-10-2024, 7d
-            Téléchargement de données : active, 09-10-2024, 1d
-            Création du duagramme de Gantt :  active, 12-10-2024, 2d
-            Rédaction du README : active, 16-10-2024, 2d
-            Création de la carte : active, 30-10-2024, 15d
-            Création de la vidéo : active, 06-11-2024, 15d
-            Slides et site web : active, 20-11-2024, 20d
+            Répartition des tâches : active, 05-10-2024, 4d
+            Structure du projet : active, 09-10-2024, 9d
+            Architecture site : active, 16-10-2024, 3d
+            Site web : active, 18-10-2024, 30d
+            Création de la carte : active, 30-10-2024, 25d
+            Création de la vidéo : active, 06-11-2024, 25d
+            
 
         section Evaluation 
             Evaluation de mi-parcours : crit, b, 25-10-2024, 1d
