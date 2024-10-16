@@ -1,0 +1,5 @@
+numpy==1.26.4
+pandas==2.2.3
+pooch==1.8.2
+pygal==4.12.3
+setuptools==0.17.0
