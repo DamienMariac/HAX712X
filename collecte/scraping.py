@@ -11,20 +11,11 @@ soup = BeautifulSoup(response.text, 'html.parser')
 
 #on soupe
 
-# json_links = []
-# for link in soup.find_all('a', href=True):
-#     href = link['href']
-#     if href.endswith('.json'):
-#         json_links.append(href)                      Les fichiers json ne sont pas utile pour l'instant
-
-
 csv_list = []
 for link in soup.find_all('a', href=True):
     href = link['href']
     if href.endswith('.csv'):
         csv_list.append(href)
-
-
 
 
 data_folder = './data'
