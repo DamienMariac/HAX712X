@@ -1,7 +1,9 @@
+#%%
 import json
 import folium
+import os
 
-with open('collecte/eco_compte/fusion.json', 'r') as f:
+with open('../collecte/eco_compte/fusion.json', 'r') as f:
     data = json.load(f)
 
 
@@ -17,7 +19,7 @@ for entry in data:
             popup=f"Intensity: {entry['intensity']}"
         ).add_to(mymap)
 
-mymap.save('./map/eco_compte.html')
+mymap.save('eco_compte.html')
 
 
 # %%

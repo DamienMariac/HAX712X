@@ -32,7 +32,7 @@ for json_link in json_links:
 
 # FUSION
 
-fusion = './collecte/eco_compte/fusion.json'
+fusion = './map/fusion.json'
 
 with open(fusion, 'w') as outfile:
     outfile.write('[') 
