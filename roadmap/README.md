@@ -6,6 +6,16 @@ Notre projet consiste à la réalisation d'un site internet autour de la circula
 Pour ce faire, nous avons utilisés les données mise à disposition par la Tam.
 L'objectif étant de faire une carte interactive predisant le trafic et une vidéo montrant les trajets effectués sur une date donnée.
 
+## Objectif
+
+### Comment prédire le trafique de vélo ?
+La circulation depend du jours (la circulation un dimanche n'est pas la meme qu'un mardi). Ainsi on va predire en fonction du jour de la semaine en se basant sur les données des semaines precedantes.
+
+### Comment representé les données ?
+On utilise les fichiers (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). Les eco compteur donne le nombre de passage à un point donnée. Il faut alors pourvoir interpreter les données afin de les représenter sur une map
+
+
+
 
 ## Package utilisé
 
@@ -24,6 +34,6 @@ La bibliothèque Pandas fournit des outils pour lire et écrire des données dep
 
 
 ### Folium
-Une belle carte
+Folium permet de traiter des données en Python et de les visualiser sur une carte Leaflet interactive. On aura besoin de Folium pour tracer les trafiques.
 
 
