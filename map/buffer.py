@@ -43,5 +43,5 @@ for idx, row in final_routes.iterrows():
                     weight=3,
                     opacity=0.8).add_to(map)
 
-map.save('traffic_map.html')
+map.save('traffic.html')
 # %%
