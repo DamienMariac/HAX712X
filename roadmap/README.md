@@ -12,7 +12,8 @@ L'objectif étant de faire une carte interactive predisant le trafic et une vid�
 La circulation depend du jours (la circulation un dimanche n'est pas la meme qu'un mardi). Ainsi on va predire en fonction du jour de la semaine en se basant sur les données des semaines precedantes.
 
 ### Comment representé les données ?
-On utilise les fichiers (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). Les eco compteur donne le nombre de passage à un point donnée. Il faut alors pourvoir interpreter les données afin de les représenter sur une map
+On utilise les fichiers (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). Les eco compteur donne le nombre de passage à un point donnée. Il faut alors pourvoir interpreter les données afin de les représenter sur une map.
+Une autre approche consiste à créer des "buffers" autour de chaque point de mesure (eco compteurs). Un buffer est une zone géographique qui entoure un point jusqu'à une certaine distance. Vous pouvez considérer qu'une route tombe dans l'influence d'un point de mesure si elle intersecte ou touche le buffer de ce point.
 
 
 
