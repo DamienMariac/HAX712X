@@ -13,7 +13,7 @@ La circulation dépend du jour (la circulation un dimanche n'est pas la meme qu'
 
 ### Comment représenter les données ?
 On utilise les fichiers (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). Les éco-compteurs donnent le nombre de passage à un point donnée. Il faut alors pouvoir interpréter les données afin de les représenter sur une map.
-Une autre approche consiste à créer des "buffers" autour de chaque point de mesure (éco-compteurs). Un buffer est une zone géographique qui entoure un point jusqu'à une certaine distance. Vous pouvez considérer qu'une route tombe dans l'influence d'un point de mesure si elle intersecte ou touche le buffer de ce point.
+Notre approche consiste à créer des "buffers" autour de chaque point de mesure (éco-compteurs). Un buffer est une zone géographique qui entoure un point jusqu'à une certaine distance. On considère qu'une route tombe dans l'influence d'un point de mesure si elle intersecte ou touche le buffer de ce point.
 
 ## Packages utilisés
 
