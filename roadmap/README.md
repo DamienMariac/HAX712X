@@ -32,6 +32,12 @@ La bibliothèque Folium permet de traiter des données en Python et de les visua
 - **Beautiful Soup**
 La bibliothèque Beautiful Soup permet d'extraire des données de fichiers HTML et XML, facilitant ainsi le web scraping.
 
+- **Geopandas**
+GeoPandas étend les types de données utilisés par pandas pour permettre des opérations spatiales. 
+
+- **shapely**
+On utilise Shapely pour créer des "buffers" autour des eco compteurs. Un buffer est une zone qui entoure un point à une distance spécifiée.
+
 
 ## Répartition des tâches 
 
