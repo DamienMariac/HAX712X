@@ -1,8 +1,6 @@
 Metadata-Version: 2.1
 Name: recolte
 Version: 0.1
-Summary: Un package pour récupérer et traiter des données
-Author: Ton Nom
 Requires-Dist: requests
 Requires-Dist: beautifulsoup4
 Requires-Dist: pooch
