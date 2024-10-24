@@ -1,14 +1,11 @@
 #%%
-import sys
-import os
+# import sys
+# import os
+# print(sys.path)
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+# print(sys.path)  
 
-# Afficher le chemin d'importation pour vérifier
-print(sys.path)
-
-# Ajouter manuellement le chemin vers le répertoire parent du module recolte
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-print(sys.path)  # Vérifiez à nouveau le chemin d'importation
-
+# LE PACKAGE NE MARCHE PAS... IL FAUT FIXER CA
 
 import pandas as pd
 import geopandas as gpd
@@ -32,7 +29,7 @@ traffic_geo = gpd.GeoDataFrame(traffic_data, geometry='geometry')
 routes = gpd.read_file('../collecte/data/export.geojson')
 traffic_geo.set_crs(routes.crs, inplace=True)
 
-buffer_distance = 0.005  # 500 mètres
+buffer_distance = 0.005  # 500 mètres autour d'un eco compte (c'est complétement arbitraire)
 traffic_geo['buffer'] = traffic_geo.geometry.buffer(buffer_distance)
 
 buffers = gpd.GeoDataFrame(traffic_geo, geometry='buffer', crs=traffic_geo.crs)

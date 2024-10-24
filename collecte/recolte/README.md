@@ -1,6 +1,7 @@
 # Description du package recolte :
 ## Scraping
-Ce package nous sert à télécharger les données (les fichiers json) depuis internet . Il nous sert dans notre fichier buffer.py pour récolter les fichers de la TAM et pour les fusionner.
+ Il permet de scraper des liens de fichiers JSON depuis une page web, puis les télécharger, les combiner dans un seul fichier et enfin supprimer les fichiers individuels après utilisation.
 
+ 
 ## Extract
-Cela nous permet de considérer seulement les données qui nous intéressent comme l'heure de départ , les stations de départ et d'arrivées. 
+Cela nous permet de considérer seulement les données qui nous intéressent comme l'heure de départ , les stations de départ et d'arrivées.

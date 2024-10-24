@@ -4,7 +4,7 @@
 
 Notre projet vise à développer un site internet autour de la circulation à vélo dans Montpellier. 
 Pour ce faire, nous avons utilisé les données mises à disposition par la TAM.
-L'objectif est de créer une carte interactive prédisant le trafic et une vidéo montrant les trajets effectués sur une date donnée.
+L'objectif est de créer une carte interactive prédisant le trafic et une vidéo montrant les trajets des Vélomagg effectués sur une date donnée.
 
 ## Site web
 Vous pouvez consulter le site web du projet ici : [BikeMap](https://damienmariac.github.io/HAX712X/)
@@ -41,6 +41,10 @@ Le package GeoPandas est une extension de Pandas permettant de manipuler des obj
 
 - **Shapely** :
 La bibliothèque Shapely permet de manipuler et analyser des objets géométriques en réalisant des opérations géométriques comme des calculs de distances. On utilisera Shapely pour créer des "buffers" autour des eco compteurs.
+
+- **recolte**
+  - **Scraping** : Ce module permet de récupérer des liens de fichiers JSON depuis une page web (celui de la TAM), de les télécharger, de les combiner en un seul fichier json, puis de supprimer les fichiers individuels après leur utilisation.
+  - **Extract** : Ce module extrait les données pertinentes des fichiers JSON, comme l'heure de départ, les stations de départ et d'arrivée (très spécifique pour buffer).
 
 
 ## Répartition des tâches 
