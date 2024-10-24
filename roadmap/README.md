@@ -2,41 +2,45 @@
 
 ## Description du projet
 
-Notre projet consiste à la réalisation d'un site internet autour de la circulation à vélo dans Montpellier. 
+Notre projet vise à développer un site internet autour de la circulation à vélo dans Montpellier. 
 Pour ce faire, nous avons utilisé les données mises à disposition par la TAM.
-L'objectif étant de faire une carte interactive prédisant le trafic et une vidéo montrant les trajets effectués sur une date donnée.
+L'objectif est de créer une carte interactive prédisant le trafic et une vidéo montrant les trajets effectués sur une date donnée.
+
+## Site web
+Vous pouvez consulter le site web du projet ici : [BikeMap](https://damienmariac.github.io/HAX712X/)
 
 ## Objectif
 
 ### Comment prédire le trafic de vélo ?
-La circulation dépend du jour (la circulation un dimanche n'est pas la meme qu'un mardi). Ainsi on va prédire en fonction du jour de la semaine en se basant sur les données des semaines précédentes.
+La circulation varie en fonction des jours (la circulation un dimanche n'est pas la même qu'un mardi). Ainsi nos prédictions tiendront compte du jour de la semaine, en se basant sur les données des semaines précédentes.
 
 ### Comment représenter les données ?
-On utilise les fichiers (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). Les éco-compteurs donnent le nombre de passage à un point donnée. Il faut alors pouvoir interpréter les données afin de les représenter sur une map.
-Notre approche consiste à créer des "buffers" autour de chaque point de mesure (éco-compteurs). Un buffer est une zone géographique qui entoure un point jusqu'à une certaine distance. On considère qu'une route tombe dans l'influence d'un point de mesure si elle intersecte ou touche le buffer de ce point.
+Nous récupérons les fichiers dont nous avons besoin sur ce lien (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). 
+Les éco-compteurs donnent le nombre de passage à un point donnée. L'objectif est d'interpréter ces données pour les visualiser sur une carte.
+Notre approche consiste à créer des "buffers" autour de chaque point de mesure (éco-compteurs). Un buffer est une zone géographique qui entourant un point jusqu'à un certain rayon. On considère qu'une route tombe dans l'influence d'un point de mesure si elle intersecte ou touche le buffer de ce point.
 
 ## Packages utilisés
 
-- **NumPy**
+- **NumPy** :
 La bibliothèque NumPy sert essentiellement pour le calcul numérique. En partie, elle permet la création de tableaux multidimensionnels et propose des fonctions mathématiques avancées pour les manipuler.
 
-- **Pandas**
-La bibliothèque Pandas fournit des outils pour lire et écrire des données depuis et vers différents formats.  Elle est particulièrement efficace pour le nettoyage et la préparation des données.
-
-- **Pooch**
+- **Pooch** :
 La bibliothèque Pooch simplifie le téléchargement et la gestion de données. Elle facilite la gestion des dépendances de fichiers et permet de les stocker à des emplacements spécifiques, ce qui simplifie le partage et l’utilisation des données dans les projets.
 
-- **Folium**
+- **Folium** :
 La bibliothèque Folium permet de traiter des données en Python et de les visualiser sur une carte Leaflet interactive. Nous l'utiliserons pour tracer le trafic cycliste.
 
-- **Beautiful Soup**
+- **Beautiful Soup** :
 La bibliothèque Beautiful Soup permet d'extraire des données de fichiers HTML et XML, facilitant ainsi le web scraping.
 
-- **Geopandas**
-GeoPandas étend les types de données utilisés par pandas pour permettre des opérations spatiales. 
+- **Pandas** :
+La bibliothèque Pandas fournit des outils pour lire et écrire des données depuis et vers différents formats.  Elle est particulièrement efficace pour le nettoyage et la préparation des données.
 
-- **shapely**
-On utilise Shapely pour créer des "buffers" autour des eco compteurs. Un buffer est une zone qui entoure un point à une distance spécifiée.
+- **Geopandas** :
+Le package GeoPandas est une extension de Pandas permettant de manipuler des objets géographiques et d'effectuer des opérations spatiales.
+
+- **Shapely** :
+La bibliothèque Shapely permet de manipuler et analyser des objets géométriques en réalisant des opérations géométriques comme des calculs de distances. On utilisera Shapely pour créer des "buffers" autour des eco compteurs.
 
 
 ## Répartition des tâches 
