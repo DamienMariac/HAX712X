@@ -16,8 +16,8 @@ La circulation varie en fonction des jours (la circulation un dimanche n'est pas
 
 ### Comment représenter les données ?
 Nous récupérons les fichiers dont nous avons besoin sur ce lien (https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo). 
-Les éco-compteurs donnent le nombre de passage à un point donnée. L'objectif est d'interpréter ces données pour les visualiser sur une carte.
-Notre approche consiste à créer des "buffers" autour de chaque point de mesure (éco-compteurs). Un buffer est une zone géographique qui entourant un point jusqu'à un certain rayon. On considère qu'une route tombe dans l'influence d'un point de mesure si elle intersecte ou touche le buffer de ce point.
+Les éco-compteurs donnent le nombre de passage à un point donné. L'objectif est d'interpréter ces données pour les visualiser sur une carte.
+Notre approche consiste à créer des "buffers" autour de chaque point de mesure (éco-compteurs). Un buffer est une zone géographique entourant un point jusqu'à un certain rayon. On considère qu'une route tombe dans l'influence d'un point de mesure si elle intersecte/touche le buffer de ce point.
 
 ## Packages utilisés
 
@@ -42,7 +42,7 @@ Le package GeoPandas est une extension de Pandas permettant de manipuler des obj
 - **Shapely** :
 La bibliothèque Shapely permet de manipuler et analyser des objets géométriques en réalisant des opérations géométriques comme des calculs de distances. On utilisera Shapely pour créer des "buffers" autour des eco compteurs.
 
-- **recolte**
+- **recolte** :
   C'est un package crée par nous-même.
   - **Scraping** : Ce module permet de récupérer des liens de fichiers JSON depuis une page web (celui de la TAM), de les télécharger, de les combiner en un seul fichier json, puis de supprimer les fichiers individuels après leur utilisation.
   - **Extract** : Ce module extrait les données pertinentes des fichiers JSON, comme l'heure de départ, les stations de départ et d'arrivée (très spécifique pour buffer).
