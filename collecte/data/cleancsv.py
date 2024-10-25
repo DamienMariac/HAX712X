@@ -14,4 +14,6 @@ for colonne in colonnes:
     df[colonne] = df[colonne].replace(corrections, regex=True)
 
 #%% 
-df.to_csv('selected_stations_corrected.csv')
+df.to_csv('selected_stations.csv')
+
+# %%
