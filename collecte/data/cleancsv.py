@@ -7,7 +7,8 @@ colonnes = ['Departure station', 'Return station']
 corrections = {
     "Ã©": "é",
     "Ã¨": "è",
-    "Ã´": "ô"
+    "Ã´": "ô",
+    "Saint-Guilhem - Courreau": "Saint-Guilhem"
 }
 
 for colonne in colonnes:
