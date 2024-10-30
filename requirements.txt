@@ -1,5 +1,10 @@
 numpy==1.26.4
 pandas==2.2.3
+geopandas==0.14.4
 pooch==1.8.2
 beautifulsoup==4.12.3
 folium==0.17.0
+maplotlib==3.9.2
+moviepy==1.0.3
+osmnx==1.9.4
+#recolte==0.1
