@@ -1,8 +1,4 @@
 #%%
-import sys
-print(sys.path)  # Cela vous montrera tous les chemins où Python cherche des modules
-
-
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point, LineString
