@@ -1,12 +1,4 @@
 #%%
-# import sys
-# import os
-# print(sys.path)
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-# print(sys.path)  
-
-# LE PACKAGE NE MARCHE PAS... IL FAUT FIXER CA
-
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point, LineString
