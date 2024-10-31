@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: recolte
+Version: 1
+Summary: Un package pour télécharger et fusionner des fichiers JSON
+Requires-Dist: requests
