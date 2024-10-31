@@ -1,47 +1,31 @@
-#%%
-import pandas as pd
 import geopandas as gpd
-from shapely.geometry import Point, LineString
 import folium
-from recolte.scraping import Scraper
-from recolte.extract import DataExtractor
-
-scraper = Scraper('https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo', '../collecte/eco_compte')
-json_links = scraper.collect_json_links()
-scraper.download_and_fuse_json(json_links, '../collecte/eco_compte/fusion.json')
+import json
+from shapely.geometry import Point
 
 
-extractor = DataExtractor('../collecte/data/TAM_MMM_CoursesVelomagg.csv', '../collecte/eco_compte/fusion.json')
-data_with_coordinates = extractor.extract_coordinates_from_json()
+file_path = 'collecte/map/eco_comptage.json'
+with open(file_path, 'r') as file:
+    data = json.load(file)
 
-traffic_data = pd.DataFrame(data_with_coordinates)
-traffic_data['geometry'] = [Point(xy) for xy in zip(traffic_data['longitude'], traffic_data['latitude'])]
-traffic_geo = gpd.GeoDataFrame(traffic_data, geometry='geometry')
+gdf = gpd.GeoDataFrame(data)
 
-routes = gpd.read_file('../collecte/data/export.geojson')
-traffic_geo.set_crs(routes.crs, inplace=True)
+gdf['geometry'] = [Point(xy) for xy in zip(gdf['longitude'], gdf['latitude'])]
+gdf.set_crs(epsg=4326, inplace=True) 
 
-buffer_distance = 0.005  # 500 mètres autour d'un eco compte (c'est complétement arbitraire)
-traffic_geo['buffer'] = traffic_geo.geometry.buffer(buffer_distance)
+gdf['geometry'] = gdf.apply(lambda row: row['geometry'].buffer(row['intensity'] * 0.5), axis=1)
 
-buffers = gpd.GeoDataFrame(traffic_geo, geometry='buffer', crs=traffic_geo.crs)
-intersected_routes = gpd.sjoin(buffers, routes, how='inner', op='intersects')
+map_center = gdf.geometry.unary_union.centroid
+map = folium.Map(location=[map_center.y, map_center.x], zoom_start=13)
 
-routes_traffic = intersected_routes.groupby('index_right').agg({
-    'intensity': 'mean' 
-}).rename(columns={'intensity': 'average_intensity'})
+def style_function(feature):
+    return {
+        'fillColor': '#ffaf00',
+        'color': '#556b2f',
+        'weight': 1.5,
+        'fillOpacity': 0.5
+    }
 
-final_routes = routes.join(routes_traffic, how='left')
+folium.GeoJson(gdf, style_function=style_function).add_to(map)
 
-map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)
-
-for idx, row in final_routes.iterrows():
-    sim_geo = [[point[1], point[0]] for point in row['geometry'].coords]
-    folium.PolyLine(sim_geo,
-                    color='green' if row['average_intensity'] < 5000 else 'orange' if row['average_intensity'] < 10000 else 'red',
-                    weight=3,
-                    opacity=0.8).add_to(map)
-
-map.save('Montpellier_trafic.html')
-
-# %%
+map.save('map.html')

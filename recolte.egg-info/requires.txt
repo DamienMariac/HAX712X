@@ -1,7 +1,0 @@
-requests
-beautifulsoup4
-pooch
-pandas
-geopandas
-shapely
-folium
