@@ -1,16 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="recolte",
-    version="0.1",
-    packages=find_packages(),
+    name='recolte', 
+    version='1',  
+    packages=find_packages(), 
+    description='Un package pour télécharger et fusionner des fichiers JSON',  
     install_requires=[
-        "requests", 
-        "beautifulsoup4", 
-        "pooch", 
-        "pandas", 
-        "geopandas", 
-        "shapely", 
-        "folium"
+        'requests',  
     ],
 )
