@@ -16,5 +16,3 @@ def fusionner_json(dossier_source, fichier_sortie):
                         fichier_final.write(ligne_json)  
         fichier_final.write("\n]")
 
-    print(f"Tous les fichiers JSON ont été fusionnés dans {fichier_sortie}")
-
