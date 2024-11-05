@@ -1,47 +1,39 @@
-#%%
-import pandas as pd
 import geopandas as gpd
-from shapely.geometry import Point, LineString
 import folium
-from recolte.scraping import Scraper
-from recolte.extract import DataExtractor
+import json
+from shapely.geometry import Point
 
-scraper = Scraper('https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo', '../collecte/eco_compte')
-json_links = scraper.collect_json_links()
-scraper.download_and_fuse_json(json_links, '../collecte/eco_compte/fusion.json')
+file_path = 'collecte/map/eco_comptage.json'
+with open(file_path, 'r') as file:
+    data = json.load(file)
+
+data = [item for item in data if item['location']['coordinates'][0] is not None and item['location']['coordinates'][1] is not None]
+gdf = gpd.GeoDataFrame(data)
 
 
-extractor = DataExtractor('../collecte/data/TAM_MMM_CoursesVelomagg.csv', '../collecte/eco_compte/fusion.json')
-data_with_coordinates = extractor.extract_coordinates_from_json()
+gdf['geometry'] = [Point(xy) for xy in gdf['location'].apply(lambda loc: loc['coordinates'])]
 
-traffic_data = pd.DataFrame(data_with_coordinates)
-traffic_data['geometry'] = [Point(xy) for xy in zip(traffic_data['longitude'], traffic_data['latitude'])]
-traffic_geo = gpd.GeoDataFrame(traffic_data, geometry='geometry')
 
-routes = gpd.read_file('../collecte/data/export.geojson')
-traffic_geo.set_crs(routes.crs, inplace=True)
+gdf.set_crs(epsg=4326, inplace=True)
 
-buffer_distance = 0.005  # 500 mètres autour d'un eco compte (c'est complétement arbitraire)
-traffic_geo['buffer'] = traffic_geo.geometry.buffer(buffer_distance)
+map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)  
 
-buffers = gpd.GeoDataFrame(traffic_geo, geometry='buffer', crs=traffic_geo.crs)
-intersected_routes = gpd.sjoin(buffers, routes, how='inner', op='intersects')
+def color(intensity):
+    if intensity > 1000:
+        return 'red'
+    elif intensity > 500:
+        return 'orange'
+    else:
+        return 'green'
 
-routes_traffic = intersected_routes.groupby('index_right').agg({
-    'intensity': 'mean' 
-}).rename(columns={'intensity': 'average_intensity'})
+for _, row in gdf.iterrows():
+    folium.CircleMarker(
+        location=[row['geometry'].y, row['geometry'].x],
+        radius=5,
+        color=color(row['intensity']),
+        fill=True,
+        fill_color=color(row['intensity']),
+        fill_opacity=0.7
+    ).add_to(map)
 
-final_routes = routes.join(routes_traffic, how='left')
-
-map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)
-
-for idx, row in final_routes.iterrows():
-    sim_geo = [[point[1], point[0]] for point in row['geometry'].coords]
-    folium.PolyLine(sim_geo,
-                    color='green' if row['average_intensity'] < 5000 else 'orange' if row['average_intensity'] < 10000 else 'red',
-                    weight=3,
-                    opacity=0.8).add_to(map)
-
-map.save('Montpellier_trafic.html')
-
-# %%
+map.save('collecte/map/intensité_ecocompteur.html')
