@@ -1,7 +1,0 @@
-installation de ffmpeg
-pandas network osmnx et panda geopy.
-j'ai corrigé facdessiences.
-je n'arrive pas à récupérer toutes les coordonnées des stations vélomag.
-(j'ai essayé de remplacer mm l'adresse par le nom de la station mais cela ne marchait pas. du coup j'ai pris une partie de video.csv dont je pouvais avoir les coordonnées et j'ai continué.
-
-la fonction coordonnées donne les coordonnées de certaines stations que j'ai essayer pour faire la simulation. mais elle n'a marché qu'une seule fois. besoin d'aide pitié...
