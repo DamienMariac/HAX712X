@@ -43,9 +43,9 @@ Le package GeoPandas est une extension de Pandas permettant de manipuler des obj
 La bibliothèque Shapely permet de manipuler et analyser des objets géométriques en réalisant des opérations géométriques comme des calculs de distances. On utilisera Shapely pour créer des "buffers" autour des eco compteurs.
 
 - **recolte** :
-  C'est un package crée par nous-même.
-  - **Scraping** : Ce module permet de récupérer des liens de fichiers JSON depuis une page web (celui de la TAM), de les télécharger, de les combiner en un seul fichier json, puis de supprimer les fichiers individuels après leur utilisation.
-  - **Extract** : Ce module extrait les données pertinentes des fichiers JSON, comme l'heure de départ, les stations de départ et d'arrivée (très spécifique pour buffer).
+  C'est un package crée par nous-même. Voici les modules :
+  - **telechargeur** : Ce module permet de récupérer des liens de fichiers JSON depuis une page web (celui de la TAM), de les télécharger.
+  - **Fusionneur** : Ce module permet de concatener les données en un seul fichier.
 
 
 ## Répartition des tâches 
