@@ -1,0 +1,6 @@
+---
+title: "Mon Projet GitHub"
+author: "Damien Mariac, Julien Ollier, Abdoul-El Sawadogo, Marine Germain"
+output: html_document
+---
+
