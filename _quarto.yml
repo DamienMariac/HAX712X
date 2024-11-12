@@ -1,0 +1,5 @@
+project:
+  type: website
+  output-dir: docs
+
+# INDIQUE A QUARTO OU METTRE LES FICHIERS GENERE DU SITE
