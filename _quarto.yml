@@ -2,4 +2,10 @@ project:
   type: website
   output-dir: docs
 
-# INDIQUE A QUARTO OU METTRE LES FICHIERS GENERE DU SITE
+
+format:
+  html:
+    theme: solar # ON PEUT CHANGER LE THEME PAS DE SOUCIS
+
+
+
