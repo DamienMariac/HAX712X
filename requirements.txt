@@ -2,8 +2,8 @@ numpy==1.26.4
 pandas==2.2.3
 geopandas==0.14.4
 pooch==1.8.2
-beautifulsoup4==4.12.3  # Assurez-vous que le nom du package est correct
+beautifulsoup4==4.12.3  
 folium==0.17.0
-matplotlib==3.9.2  # Correction de l'orthographe ici
+matplotlib==3.9.2 
 moviepy==1.0.3
-osmnx==1.9.4
+osmnx==1.9.4pip show PyYAML

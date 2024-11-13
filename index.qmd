@@ -9,6 +9,9 @@ execute:
 Bienvenue, voici la carte :
 
 ```{python}
+#| warning: false
+#| echo: false
+
 import geopandas as gpd
 import folium
 import json
