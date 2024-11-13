@@ -1,0 +1,20 @@
+BikeMap documentation
+=====================
+
+Bienvenue dans la documentation du projet **BikeMap** ! Ce guide vous aidera à comprendre, configurer et utiliser le projet de manière efficace.
+
+Présentation
+------------
+
+
+Objectifs du Projet
+-------------------
+
+Installation
+------------
+
+Table des matières
+==================
+.. toctree::
+   :maxdepth: 2
+   :caption: Contenu :
