@@ -2,7 +2,6 @@ project:
   type: website
   output-dir: docs
 
-
 format:
   html:
     theme: solar # ON PEUT CHANGER LE THEME PAS DE SOUCIS

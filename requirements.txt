@@ -7,4 +7,3 @@ folium==0.17.0
 maplotlib==3.9.2
 moviepy==1.0.3
 osmnx==1.9.4
-#recolte==0.1
