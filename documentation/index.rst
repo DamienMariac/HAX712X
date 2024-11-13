@@ -1,7 +1,7 @@
 BikeMap documentation
 =====================
 
-Bienvenue dans la documentation du projet **BikeMap** !
+Bienvenue dans la documentation du projet BikeMap !
 
 Présentation : 
 ------------

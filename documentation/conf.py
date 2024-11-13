@@ -26,3 +26,7 @@ language = 'fr'
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+extensions = [
+    'sphinx.ext.autodoc', #pour générer direct la doc API a partir des docstrings
+]

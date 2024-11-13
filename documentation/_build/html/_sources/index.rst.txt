@@ -1,17 +1,18 @@
 BikeMap documentation
 =====================
 
-Bienvenue dans la documentation du projet **BikeMap** ! Ce guide vous aidera à comprendre, configurer et utiliser le projet de manière efficace.
+Bienvenue dans la documentation du projet BikeMap !
 
-Présentation
+Présentation : 
 ------------
 
 
-Objectifs du Projet
+Objectifs du Projet : 
 -------------------
 
-Installation
+Installation :
 ------------
+
 
 Table des matières
 ==================
