@@ -3,7 +3,8 @@ project:
   output-dir: docs
   render:
     - index.qmd
-    - onglet/test.qmd 
+    - webpage/prevision/prevision.qmd
+    - webpage/video/video.qmd
 
 
 website:
@@ -12,18 +13,26 @@ website:
   navbar:
     title: "Bike MAP"
     left:
-      - text: "Accueil"
-        href: index.html
-      - text: "Onglet"
-        href: onglet/test.qmd  
+      - text: "Prévision"
+        href: webpage/prevision/prevision.qmd 
+      - text: "Vidéo"
+        href: webpage/video/video.qmd 
 
 
 sidebar:
   - id: onglet
-    title: "Onglet"
+    title: "prevision"
     collapse-level: 3
     contents:
-      - onglet/test.qmd  
+      - webpage/prevision/prevision.qmd
+
+  - id: onglet
+    title: "vidéo"
+    collapse-level: 3
+    contents:
+      - webpage/video/video.qmd      
+
+
 
 
 format:
