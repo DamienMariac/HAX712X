@@ -1,16 +1,9 @@
 [
   {
-    "objectID": "roadmap/Gantt.html",
-    "href": "roadmap/Gantt.html",
-    "title": "",
-    "section": "",
-    "text": "gantt\ntitle Diagramme de Gantt\ndateFormat DD-MM-YYYY\naxisFormat %d-%m-%y\n\nsection Réunion de groupe\nRéunion 1 : active, 02-10-2024, 1d\nRéunion 2 : active, 09-10-2024, 1d\nRéunion 3 : active, 16-10-2024, 1d\nRéunion 4 : active, 23-10-2024, 1d\nRéunion 5 : active, 30-10-2024, 1d\nRéunion 6 : active, 06-11-2024, 1d\nRéunion 7 : active, 13-11-2024, 1d\nRéunion 8 : active, 20-11-2024, 1d\nRéunion 9 : active, 27-11-2024, 1d\nRéunion 10 : active, 04-12-2024, 1d\nRéunion 11 : active, 08-12-2024, 1d\n\nsection Tâches \nCréation du projet : done, 02-10-2024, 7d\nRépartition des tâches : active, 05-10-2024, 4d\nStructure du projet : active, 09-10-2024, 9d\nArchitecture site : active, 16-10-2024, 3d\nSite web : active, 18-10-2024, 30d\nCréation de la carte : active, 30-10-2024, 25d\nCréation de la vidéo : active, 06-11-2024, 25d\n\n\nsection Evaluation \nEvaluation de mi-parcours : crit, b, 25-10-2024, 1d\nFinalisation du projet : crit, b, 10-12-2024, 1d\nSoutenance orale : crit, b,  13-12-2024, 1d"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Bike Map",
     "section": "",
-    "text": "Bienvenue, voici la carte :\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
+    "text": "Bienvenue, voici la carte :\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
   }
 ]
