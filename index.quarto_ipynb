@@ -17,7 +17,7 @@
         "\n",
         "Bienvenue, voici la carte :\n"
       ],
-      "id": "583c4a69"
+      "id": "1336be02"
     },
     {
       "cell_type": "code",
@@ -33,7 +33,7 @@
         "from IPython.display import HTML\n",
         "\n",
         "# Données\n",
-        "traffic_data_path = 'collecte/map/eco_comptage.json'\n",
+        "traffic_data_path = 'data/eco_comptage.json'\n",
         "with open(traffic_data_path, 'r') as file:\n",
         "    traffic_data = json.load(file)\n",
         "\n",
@@ -51,7 +51,7 @@
         ")\n",
         "\n",
         "# Routes\n",
-        "routes_gdf = gpd.read_file('collecte/map/routesM.geojson')\n",
+        "routes_gdf = gpd.read_file('data/export.geojson')\n",
         "routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)\n",
         "\n",
         "# Jointure\n",
@@ -81,7 +81,7 @@
         "# Affichage de la carte\n",
         "HTML(map._repr_html_())"
       ],
-      "id": "26917b26",
+      "id": "8d738974",
       "execution_count": null,
       "outputs": []
     }

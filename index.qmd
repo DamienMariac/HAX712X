@@ -19,7 +19,7 @@ from shapely.geometry import Point
 from IPython.display import HTML
 
 # Données
-traffic_data_path = 'collecte/map/eco_comptage.json'
+traffic_data_path = 'data/eco_comptage.json'
 with open(traffic_data_path, 'r') as file:
     traffic_data = json.load(file)
 
@@ -37,7 +37,7 @@ traffic_gdf = gpd.GeoDataFrame(
 )
 
 # Routes
-routes_gdf = gpd.read_file('collecte/map/routesM.geojson')
+routes_gdf = gpd.read_file('data/export.geojson')
 routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
 
 # Jointure
