@@ -1,10 +1,68 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - webpage/prevision/prevision.qmd
+    - webpage/video/video.qmd
+
+
+website:
+  back-to-top-navigation: true
+  title: "Bike MAP"
+  navbar:
+    title: "Bike MAP"
+    left:
+      - text: "Prévision"
+        href: webpage/prevision/prevision.qmd 
+      - text: "Vidéo"
+        href: webpage/video/video.qmd 
+
+
+sidebar:
+  - id: onglet
+    title: "prevision"
+    collapse-level: 3
+    contents:
+      - webpage/prevision/prevision.qmd
+
+  - id: onglet
+    title: "vidéo"
+    collapse-level: 3
+    contents:
+      - webpage/video/video.qmd      
+
+
+
 
 format:
   html:
-    theme: solar # ON PEUT CHANGER LE THEME PAS DE SOUCIS
+    theme: solar
+
+
+# project:
+#   type: website
+#   output-dir: docs
+#   render :
+#     - index.qmd
+#     - docs/onglet/test.qmd
+
+# website:
+#   back-to-top-navigation: true
+#   title: "Bike MAP"
+
+# sidebar:
+#   - id: onglet
+#     title: "onglet"
+#     collapse-level: 3
+#     contents:
+#       - docs/onglet/test.qmd
+
+
+
+# format:
+#   html:
+#     theme: solar # ON PEUT CHANGER LE THEME PAS DE SOUCIS
 
 
 
