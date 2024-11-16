@@ -1,31 +1,19 @@
+import pandas as pd
 import geopandas as gpd
 import folium
-import json
-import pandas as pd
+from shapely.geometry import Point
 import shapely
-from shapely.geometry import LineString, Point 
 
-with open('data/eco_comptage_archive.json', 'r') as file:
-    traffic_data = json.load(file)
+traffic_df = pd.read_csv('data/all_archive.csv', delimiter=';')
 
-valid_traffic_data = [
-    item for item in traffic_data 
-    if 'coordinates' in item['location'] and item['location']['coordinates'][0] is not None and item['location']['coordinates'][1] is not None
-]
+traffic_df['coordinates'] = list(zip(traffic_df['longitude'], traffic_df['latitude']))
+traffic_df['date'] = pd.to_datetime(traffic_df['date'].str.split('/').str[0])
+traffic_df['day_of_week'] = traffic_df['date'].dt.day_name()
 
-traffic_df = pd.DataFrame(valid_traffic_data)
-
-traffic_df['dateObserved'] = pd.to_datetime(traffic_df['dateObserved'].str.split('/').str[0])
-
-# Ajouter une colonne pour le jour de la semaine
-traffic_df['day_of_week'] = traffic_df['dateObserved'].dt.day_name()
-
-traffic_df['coordinates'] = traffic_df['location'].apply(lambda loc: tuple(loc['coordinates']))
-# Calculer la moyenne par jour de la semaine
+# Calculer la moyenne de l'intensité par jour de la semaine et par coordonnées
 average_traffic = traffic_df.groupby(['day_of_week', 'coordinates']).agg({
     'intensity': 'mean'
 }).reset_index()
-
 
 routes_gdf = gpd.read_file('data/export.geojson')
 routes_gdf = routes_gdf.to_crs("EPSG:4326")
@@ -42,11 +30,10 @@ def get_color(intensity):
     else:
         return 'green'
 
-# Création de cartes pour chaque jour de la semaine
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 for day in days:
     # Filtrer les données pour le jour spécifique
-    day_data = average_traffic[average_traffic['day'] == day]
+    day_data = average_traffic[average_traffic['day_of_week'] == day]
 
     traffic_gdf = gpd.GeoDataFrame(
         day_data,
@@ -57,6 +44,8 @@ for day in days:
     joined_gdf = gpd.sjoin_nearest(routes_gdf, traffic_gdf, how="inner", max_distance=100)
 
     map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)
+
+    # Ajouter les polylignes sur la carte
     for _, row in joined_gdf.iterrows():
         route_color = get_color(row['intensity'])
         if isinstance(row.geometry, shapely.geometry.LineString):
