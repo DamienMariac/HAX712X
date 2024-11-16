@@ -1,5 +1,3 @@
-/data/*
-!/data/.gitkeep
 /collecte/eco_compte/*
 !/collecte/eco_compte/.gitkeep
 
