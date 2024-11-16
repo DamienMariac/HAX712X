@@ -6,4 +6,4 @@ beautifulsoup4==4.12.3
 folium==0.17.0
 matplotlib==3.9.2 
 moviepy==1.0.3
-osmnx==1.9.4pip show PyYAML
+osmnx==1.9.4
