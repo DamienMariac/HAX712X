@@ -7,6 +7,4 @@ Les données de trafic sont récupérées en temps réel et utilisées pour pré
 Technologies utilisées
 ----------------------
 - Python
-- JavaScript (avec la bibliothèque Leaflet pour la carte)
-- Flask (pour le serveur web)
-- API pour les données de trafic
+
