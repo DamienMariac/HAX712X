@@ -7,6 +7,12 @@ execute:
 
 Voila une video représentant la circulation le (mettre une date)
 
+![video velomag](../../video/montpelliervelo.gif)
+
+
+
+
+<!-- 
 ```{python}
 import pandas as pd
 import osmnx as ox
@@ -15,7 +21,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from datetime import datetime
 
-trajets_df = pd.read_csv('video/fusion.csv')
+trajets_df = pd.read_csv('../../video/fusion.csv')
 
 
 date = '2024-01-01'
@@ -88,4 +94,5 @@ def animate(frame):
 
 compression_ratio = 86400 / 1000 
 plt.show()
-```
+``` 
+-->
