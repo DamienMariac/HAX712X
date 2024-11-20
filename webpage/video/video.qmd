@@ -5,12 +5,9 @@ execute:
   enabled: true
 ---
 
-Voila une video représentant la circulation le (mettre une date)
+Voila une video représentant la circulation le 01-09-2024 :
 
-![video velomag](../../video/montpelliervelo.gif)
-
-
-
+![video velomag](../../video/montpelliervelo0901.gif)
 
 <!-- 
 ```{python}

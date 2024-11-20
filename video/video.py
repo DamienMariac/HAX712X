@@ -9,7 +9,7 @@ from datetime import datetime
 trajets_df = pd.read_csv('video/fusion.csv')
 
 # Filtrer les trajets du 1er janvier 2024
-date = '2024-01-01'
+date = '2024-09-05'
 course = trajets_df[trajets_df['Departure'].str.contains(date)]
 course = course.dropna(subset=['latitude_depart', 'longitude_depart', 'latitude_arrivee', 'longitude_arrivee'])
 
@@ -78,6 +78,6 @@ def animate(frame):
     return [p['point'] for p in points]
 
 compression_ratio = 86400 / 1000  # Compression du temps
-ani = FuncAnimation(fig, animate, frames=50, interval=1000 / 30, blit=True)
-ani.save('video/montpelliervelo.gif', writer='pillow', fps=30)
+ani = FuncAnimation(fig, animate, frames=60, interval=1000 / 20, blit=True)
+ani.save('video/montpelliervelo0901.gif', writer='pillow', fps=30)
 plt.show()
