@@ -23,9 +23,19 @@ git clone https://github.com/DamienMariac/HAX712X.git
 cd HAX712X
 ```
 #### 3. Installation des packages nécessaires : 
+
+Remarque : Nous vous conseillons de créer un environnement virtuel (avec Conda ou virtual-env par exemple) afin de garder un contrôle simple sur les dépendances installées. 
+Voici un exemple de la procédure à suivre avec conda : 
+
+``` python
+conda create --name bike-map-env python=3.12
+conda activate bike-map-env
+```
+Enfin vous pouvez installer les packages avec la commande suivante : 
 ``` python
 pip install -r requirements.txt
 ```
+
 #### 4. Lancement du site web avec Quarto : 
 ``` python
 quarto preview
