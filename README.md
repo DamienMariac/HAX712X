@@ -11,22 +11,22 @@ Vous pouvez consulter le site web du projet ici : [BikeMap](https://damienmariac
 
 ## Guide d'installation 
 
-1. Pré-requis :
+#### 1. Pré-requis :
 - Python 3.12
 - Git
 - Quarto
 
-1. Clonage du dépot GitHub : 
+#### 2. Clonage du dépot GitHub : 
    
 ``` python
 git clone https://github.com/DamienMariac/HAX712X.git
 cd HAX712X
 ```
-3. Installation des packages nécessaires : 
+#### 3. Installation des packages nécessaires : 
 ``` python
    pip install -r requirements.txt
 ```
-4. Lancement du site web avec Quarto : 
+#### 4. Lancement du site web avec Quarto : 
 ``` python
 quarto preview
 ```
