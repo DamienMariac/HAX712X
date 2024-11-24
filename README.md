@@ -24,7 +24,7 @@ cd HAX712X
 ```
 #### 3. Installation des packages nécessaires : 
 ``` python
-   pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 #### 4. Lancement du site web avec Quarto : 
 ``` python
