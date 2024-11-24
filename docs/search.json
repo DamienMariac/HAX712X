@@ -7,38 +7,10 @@
     "text": "Bienvenue, voici la carte :\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "webpage/prevision/prevision.html",
-    "href": "webpage/prevision/prevision.html",
-    "title": "Affichage structuré des cartes",
-    "section": "",
-    "text": "Nous avons plusieurs cartes disponibles. Cliquez sur un bouton pour afficher la carte correspondante."
-  },
-  {
     "objectID": "webpage/video/video.html",
     "href": "webpage/video/video.html",
     "title": "CIRCULATION",
     "section": "",
     "text": "Voila une video représentant la circulation le 01-09-2024 :\n\n\n\nvideo velomag\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "webpage/prevision/prevision.html#choisissez-une-image",
-    "href": "webpage/prevision/prevision.html#choisissez-une-image",
-    "title": "Interface Interactive avec des Boutons",
-    "section": "",
-    "text": "#| warning: false #| echo: false import panel as pn"
-  },
-  {
-    "objectID": "webpage/prevision/prevision.html#interface-interactive-avec-des-boutons",
-    "href": "webpage/prevision/prevision.html#interface-interactive-avec-des-boutons",
-    "title": "Interface Interactive avec Panel",
-    "section": "",
-    "text": "import panel as pn"
-  },
-  {
-    "objectID": "webpage/prevision/prevision.html#affichage-interactif-des-cartes",
-    "href": "webpage/prevision/prevision.html#affichage-interactif-des-cartes",
-    "title": "Affichage structuré des cartes",
-    "section": "",
-    "text": "Nous avons plusieurs cartes disponibles. Cliquez sur un bouton pour afficher la carte correspondante."
   }
 ]
