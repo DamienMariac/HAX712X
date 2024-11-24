@@ -61,4 +61,4 @@ for day in days:
             weight=5
         ).add_to(map)
 
-    map.save(f"prediction/{day.lower()}_map.html")
+    map.save(f"../webpage/prevision/{day.lower()}_map.html")
