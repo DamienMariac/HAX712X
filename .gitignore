@@ -1,4 +1,4 @@
 /collecte/eco_compte/*
 !/collecte/eco_compte/.gitkeep
-
+/cache/
 /.quarto/
