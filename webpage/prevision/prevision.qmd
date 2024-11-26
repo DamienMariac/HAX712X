@@ -4,11 +4,14 @@ format: html
 execute:
   echo: false
   warning: false
+  panel: true
 jupyter: python3
 ---
 
 ## Prevision du trafic
 
+Voici Lundi.
+<iframe src="../../prediction/monday_map.html" width="800" height="600"></iframe>
 
 ```{python}
 import panel as pn
@@ -16,7 +19,7 @@ pn.extension()
 
 
 def display_map(map_path):
-    return pn.pane.HTML(f'<iframe src="{map_path}" width="800" height="600"></iframe>')
+    return pn.pane.HTML(f'<iframe src="map_path" width="800" height="600"></iframe>')
 
 # Création des boutons et des cartes associées
 button1 = pn.widgets.Button(name="LUNDI", button_type="primary")
@@ -33,19 +36,19 @@ map_display = pn.Column()
 # Actions des boutons
 def show_map1(event):
     map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre première carte
+    map_display.append(display_map("../../prediction/monday_map.html"))  # Chemin vers votre première carte
 
 def show_map2(event):
     map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre deuxième carte
+    map_display.append(display_map("../../prediction/thuesday_map.html"))  # Chemin vers votre deuxième carte
 
 def show_map3(event):
     map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre troisième carte
+    map_display.append(display_map("../../prediction/wednesday_map.html"))  # Chemin vers votre troisième carte
 
 def show_map4(event):
     map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre troisième carte
+    map_display.append(display_map("../../prediction/thursday_map.html"))  # Chemin vers votre troisième carte
 
 def show_map5(event):
     map_display.clear()
@@ -53,11 +56,11 @@ def show_map5(event):
 
 def show_map6(event):
     map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre troisième carte
+    map_display.append(display_map("../../prediction/saturday_map.html"))  # Chemin vers votre troisième carte
 
 def show_map7(event):
     map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre troisième carte
+    map_display.append(display_map("../../prediction/sunday_map.html"))  # Chemin vers votre troisième carte
 
 button1.on_click(show_map1)
 button2.on_click(show_map2)
