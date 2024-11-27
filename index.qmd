@@ -6,8 +6,15 @@ execute:
 ---
 
 
-Bienvenue, voici la carte :
+Bienvenue, voici les cartes :
 
+
+<iframe src="map/ecoCompteurRoutes.html" width="800" height="600"></iframe>
+
+<iframe src="map/ecoCompteurCercle.html" width="800" height="600"></iframe>
+
+
+<!-- 
 ```{python}
 #| warning: false
 #| echo: false
@@ -77,5 +84,4 @@ for _, row in joined_gdf.iterrows():
 
 
 HTML(map._repr_html_())
-
-```
+``` -->

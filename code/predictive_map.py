@@ -4,6 +4,7 @@ import folium
 from shapely.geometry import Point
 import shapely
 
+
 traffic_df = pd.read_csv('data/all_archive.csv', delimiter=';')
 
 traffic_df['coordinates'] = list(zip(traffic_df['longitude'], traffic_df['latitude']))
