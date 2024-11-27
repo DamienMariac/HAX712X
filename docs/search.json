@@ -18,7 +18,7 @@
     "href": "webpage/prevision/prevision.html",
     "title": "Prévision du trafic",
     "section": "",
-    "text": "title: Prévisions du trafic format: html\n\n\nSélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic :\n\n\nGenerate the button HTML\nbuttons = ‘’.join( f’{day}’ for day, map_file in zip(days, map_files) )\n\n\nRender the full HTML\nhtml_content = f”“”\n\n{buttons}\n\n\n\n\n\n Back to top"
+    "text": "Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic :\n\n\nLUNDI MARDI MERCREDI JEUDI VENDREDI SAMEDI DIMANCHE\n\n\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "webpage/prevision/prevision.html#prevision-du-trafic",
