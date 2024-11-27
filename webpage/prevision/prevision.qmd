@@ -31,6 +31,6 @@ jupyter: python3
 <script>
   function showMap(mapFile) {
     const iframe = document.getElementById('map-frame');
-    iframe.src = `/map/${mapFile}`;  // attention dossier map à laisser dans /docs
+    iframe.src = `map/${mapFile}`;  // attention dossier map à laisser dans /docs
     }
 </script>
