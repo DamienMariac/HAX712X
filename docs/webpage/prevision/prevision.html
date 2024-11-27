@@ -129,29 +129,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>
-Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic :
-</p>
+<p>title: Prévisions du trafic format: html</p>
+<hr>
+<section id="sélectionnez-le-jour-pour-lequel-vous-souhaitez-visualiser-la-prévision-du-trafic" class="level1">
+<h1>Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic :</h1>
+</section>
+<section id="generate-the-button-html" class="level1">
+<h1>Generate the button HTML</h1>
+<p>buttons = ‘’.join( f’<button onclick="showMap(\'{map_file}\')" style="color: white;">{day}</button>’ for day, map_file in zip(days, map_files) )</p>
+</section>
+<section id="render-the-full-html" class="level1">
+<h1>Render the full HTML</h1>
+html_content = f”“”
 <div id="button-container">
-<p><button onclick="showMap('monday_map.html')">LUNDI</button> <button onclick="showMap('tuesday_map.html')">MARDI</button> <button onclick="showMap('wednesday_map.html')">MERCREDI</button> <button onclick="showMap('thursday_map.html')">JEUDI</button> <button onclick="showMap('friday_map.html')">VENDREDI</button> <button onclick="showMap('saturday_map.html')">SAMEDI</button> <button onclick="showMap('sunday_map.html')">DIMANCHE</button></p>
+<p>{buttons}</p>
 </div>
-<style>
-  button {color: white}
-</style>
 <div id="map-container">
 <p><iframe id="map-frame" src="" width="800" height="600" style="border: none;"></iframe></p>
 </div>
 <script>
-  function showMap(mapFile) {
-    const iframe = document.getElementById('map-frame');
-    iframe.src = `/map/${mapFile}`;  // attention dossier map à laisser dans /docs
-    }
-</script>
+<p>function showMap(mapFile) {{ const iframe = document.getElementById(‘map-frame’); iframe.src = ‘/map/’ + mapFile; // attention dossier map à laisser dans /docs }} &lt;/script</p>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">BikeMap</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">BikeMap</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Prévision">Prévision</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/webpage/prevision/prevision.html">/webpage/prevision/prevision.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Vidéo">Vidéo</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/webpage/video/video.html">/webpage/video/video.html</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Prévisions du trafic – BikeMap</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Prévisions du trafic – BikeMap</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Prévisions du trafic – BikeMap</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metasitename">BikeMap</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc"></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc"></span></p>
+</div>
+</section>
 
-
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</main> <!-- /main -->
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -571,7 +578,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div> <!-- /content -->
 
 
 
