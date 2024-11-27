@@ -1,5 +1,5 @@
 ---
-title: "Affichage structuré des cartes"
+title: "Prévision du trafic"
 format: html
 execute:
   echo: false
@@ -8,76 +8,29 @@ execute:
 jupyter: python3
 ---
 
-## Prevision du trafic
+<p>Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic : </p>
 
-Voici Lundi.
-<iframe src="../../prediction/monday_map.html" width="800" height="600"></iframe>
+<div id="button-container">
+  <button onclick="showMap('monday_map.html')">LUNDI</button>
+  <button onclick="showMap('tuesday_map.html')">MARDI</button>
+  <button onclick="showMap('wednesday_map.html')">MERCREDI</button>
+  <button onclick="showMap('thursday_map.html')">JEUDI</button>
+  <button onclick="showMap('friday_map.html')">VENDREDI</button>
+  <button onclick="showMap('saturday_map.html')">SAMEDI</button>
+  <button onclick="showMap('sunday_map.html')">DIMANCHE</button>
+</div>
 
-```{python}
-import panel as pn
-pn.extension()
+<style>
+  button {color: white}
+</style>
 
+<div id="map-container">
+  <iframe id="map-frame" src="" width="800" height="600" style="border: none;"></iframe>
+</div>
 
-def display_map(map_path):
-    return pn.pane.HTML(f'<iframe src="map_path" width="800" height="600"></iframe>')
-
-# Création des boutons et des cartes associées
-button1 = pn.widgets.Button(name="LUNDI", button_type="primary")
-button2 = pn.widgets.Button(name="MARDI", button_type="primary")
-button3 = pn.widgets.Button(name="MERCREDI", button_type="primary")
-button4 = pn.widgets.Button(name="JEUDI", button_type="primary")
-button5 = pn.widgets.Button(name="VENDREDI", button_type="primary")
-button6 = pn.widgets.Button(name="SAMEDI", button_type="primary")
-button7 = pn.widgets.Button(name="DIMANCHE", button_type="primary")
-
-# Conteneur de la carte
-map_display = pn.Column()
-
-# Actions des boutons
-def show_map1(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/monday_map.html"))  # Chemin vers votre première carte
-
-def show_map2(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/thuesday_map.html"))  # Chemin vers votre deuxième carte
-
-def show_map3(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/wednesday_map.html"))  # Chemin vers votre troisième carte
-
-def show_map4(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/thursday_map.html"))  # Chemin vers votre troisième carte
-
-def show_map5(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/friday_map.html"))  # Chemin vers votre troisième carte
-
-def show_map6(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/saturday_map.html"))  # Chemin vers votre troisième carte
-
-def show_map7(event):
-    map_display.clear()
-    map_display.append(display_map("../../prediction/sunday_map.html"))  # Chemin vers votre troisième carte
-
-button1.on_click(show_map1)
-button2.on_click(show_map2)
-button3.on_click(show_map3)
-button4.on_click(show_map4)
-button5.on_click(show_map5)
-button6.on_click(show_map6)
-button7.on_click(show_map7)
-
-
-# Interface complète
-interface = pn.Column(
-    pn.Row(button1, button2, button3, button4, button5, button6, button7),
-    map_display
-)
-
-# Afficher l'interface
-interface.servable()
-```
-
+<script>
+  function showMap(mapFile) {
+    const iframe = document.getElementById('map-frame');
+    iframe.src = `/map/${mapFile}`;  // attention dossier map à laisser dans /docs
+    }
+</script>
