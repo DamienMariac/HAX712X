@@ -15,6 +15,7 @@ Vous pouvez consulter le site web du projet ici : [BikeMap](https://damienmariac
 - Python 3.12
 - Git
 - Quarto
+- Anaconda (optionnel)
 
 #### 2. Clonage du dépot GitHub : 
    

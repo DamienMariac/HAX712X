@@ -9,9 +9,9 @@ project:
 
 website:
   back-to-top-navigation: true
-  title: "Bike MAP"
+  title: "BikeMap"
   navbar:
-    title: "Bike MAP"
+    title: "BikeMap"
     left:
       - text: "Prévision"
         href: webpage/prevision/prevision.qmd 
@@ -21,13 +21,13 @@ website:
 
 sidebar:
   - id: onglet
-    title: "prevision"
+    title: "Prévision"
     collapse-level: 3
     contents:
       - webpage/prevision/prevision.qmd
 
   - id: onglet
-    title: "vidéo"
+    title: "Vidéo"
     collapse-level: 3
     contents:
       - webpage/video/video.qmd      
