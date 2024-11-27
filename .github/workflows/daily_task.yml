@@ -18,4 +18,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run script
-        run: python code/Telechargement.py  # Remplacez par le chemin de votre script Python
+        run: python code/Telechargement.py
+
+# Ce fichier permet d'automatiser le téléchargement des données (intensité de passage pour chaque eco compteur journalier)

@@ -6,7 +6,7 @@ from shapely.geometry import Point
 from IPython.display import HTML
 
 # Données
-traffic_data_path = 'data/eco_comptage.json'
+traffic_data_path = 'data/concatenated_data.jsonl'
 with open(traffic_data_path, 'r') as file:
     traffic_data = json.load(file)
 
