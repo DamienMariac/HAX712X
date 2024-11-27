@@ -1,7 +1,7 @@
 import json
 import folium
 
-with open('data/eco_comptage.json', 'r') as file:
+with open('data/concatenated_data.jsonln', 'r') as file:
     data = json.load(file)
 
 mapM = folium.Map(location=[43.6117, 3.8772], zoom_start=12)
