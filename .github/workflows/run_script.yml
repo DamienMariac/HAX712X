@@ -3,7 +3,7 @@ name: Exécuter Telechargement.py
 on:
   # L'action se lance tous les jours à 8h
   schedule:
-    - cron: "0 11 * * *"
+    - cron: "*/15 * * * *"
 
   workflow_dispatch:
 
