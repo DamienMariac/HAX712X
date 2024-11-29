@@ -1,0 +1,27 @@
+name: Exécuter Telechargement.py
+
+on:
+  # L'action se lance tous les jours à 8h
+  schedule:
+    - cron: "0 11 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+      
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      
+      - name: Installer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.5"  
+
+      - name: Exécuter Telechargement.py
+        run: |
+          python Telechargement.py
