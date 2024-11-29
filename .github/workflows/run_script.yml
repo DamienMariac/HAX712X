@@ -24,4 +24,4 @@ jobs:
 
       - name: Exécuter Telechargement.py
         run: |
-          python Telechargement.py
+          python code/Telechargement.py
