@@ -3,7 +3,7 @@ name: Exécuter code/Telechargement.py
 on:
   # Planifier l'exécution tous les jours à 11h UTC
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 1 * * *"
 
   # Permet de lancer manuellement le workflow
   workflow_dispatch:
