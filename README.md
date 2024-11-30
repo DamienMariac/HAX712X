@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 ## Documentation 
 
-La documentation du projet peut être consultée à l'adresse suivante : [Documentation Sphinx](./_build/html/index.html)
+La documentation du projet peut être consultée à l'adresse suivante : [Documentation Sphinx](./_build/index.html)
 
 ## Auteurs
 - [Damien Mariac](https://github.com/DamienMariac/)
