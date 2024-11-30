@@ -3,6 +3,7 @@ import geopandas as gpd
 import folium
 from shapely.geometry import Point
 import shapely
+from CirculationDuJour import get_color
 
 
 traffic_df = pd.read_csv('data/all_archive.csv', delimiter=';')
@@ -18,18 +19,6 @@ average_traffic = traffic_df.groupby(['day_of_week', 'coordinates']).agg({
 
 routes_gdf = gpd.read_file('data/export.geojson')
 routes_gdf = routes_gdf.to_crs("EPSG:4326")
-
-def get_color(intensity):
-    if intensity > 2000:
-        return 'darkred'
-    elif intensity > 1000:
-        return 'red'
-    elif intensity > 500:
-        return 'darkorange'
-    elif intensity > 250:
-        return 'gold'
-    else:
-        return 'green'
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 for day in days:
@@ -62,4 +51,4 @@ for day in days:
             weight=5
         ).add_to(map)
 
-    map.save(f"../webpage/prevision/{day.lower()}_map.html")
+    map.save(f"map/{day.lower()}_map.html")

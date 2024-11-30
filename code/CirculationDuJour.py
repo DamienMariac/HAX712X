@@ -31,16 +31,33 @@ joined_gdf = gpd.sjoin_nearest(routes_gdf, traffic_gdf, how="inner", max_distanc
 
 
 def get_color(intensity):
+    """
+    Fonction pour déterminer la couleur d'une route en fonction de l'intensité du trafic.
+
+    :param intensity: L'intensité du trafic pour une route donnée.
+    :type intensity: float
+    :return: La couleur associée à l'intensité du trafic.
+    :rtype: str
+    """
     if intensity > 2000:
         return 'darkred'
-    elif intensity > 1000 and intensity < 2000:
+    elif intensity > 1000:
         return 'red'
-    elif intensity > 500 and intensity < 1000:
+    elif intensity > 500:
         return 'darkorange'
-    elif intensity > 250 and intensity < 500:
+    elif intensity > 250:
         return 'gold'
     else:
         return 'green'
+"""
+Cette fonction détermine la couleur de la route en fonction de l'intensité du trafic. Les seuils de couleur sont : 
+- 'darkred' pour intensité > 2000,
+- 'red' pour intensité > 1000,
+- 'darkorange' pour intensité > 500,
+- 'gold' pour intensité > 250,
+- 'green' pour intensité <= 250.
+"""
+
 
 
 map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)

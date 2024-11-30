@@ -2,3 +2,6 @@
 !/collecte/eco_compte/.gitkeep
 /cache/
 /.quarto/
+/build/
+/data/
+/code/__pycache__

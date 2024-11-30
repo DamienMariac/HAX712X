@@ -1,0 +1,18 @@
+Documentation API
+=================
+
+.. automodule:: CirculationDuJour
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: fusion_archives
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: station_map
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

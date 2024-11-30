@@ -37,11 +37,6 @@ Enfin vous pouvez installer les packages avec la commande suivante :
 pip install -r requirements.txt
 ```
 
-#### 4. Lancement du site web avec Quarto : 
-``` python
-quarto preview
-```
-
 ## Auteurs
 - [Damien Mariac](https://github.com/DamienMariac/)
 - [Julien Ollier](https://github.com/JulienOllier)
