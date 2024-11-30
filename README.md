@@ -37,6 +37,10 @@ Enfin vous pouvez installer les packages avec la commande suivante :
 pip install -r requirements.txt
 ```
 
+## Documentation 
+
+La documentation du projet peut être consultée à l'adresse suivante : [Documentation Sphinx](./_build/html/index.html)
+
 ## Auteurs
 - [Damien Mariac](https://github.com/DamienMariac/)
 - [Julien Ollier](https://github.com/JulienOllier)
