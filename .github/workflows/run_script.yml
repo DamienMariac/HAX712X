@@ -50,3 +50,18 @@ jobs:
       - name: Exécuter MapPREDiction
         run: |
           python code/predictive_map.py
+
+          - name: Installer Quarto
+          uses: quarto-dev/quarto-actions/setup@v2
+  
+      - name: Rendre le site Quarto
+        run: |
+          quarto render
+  
+      - name: Déployer le site (GitHub Pages)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Mise à jour automatique du site"
+          git push
