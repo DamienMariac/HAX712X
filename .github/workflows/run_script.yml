@@ -1,31 +1,52 @@
-name: Exécuter code/Telechargement.py
+name: Exécuter plusieurs scripts Python
 
 on:
-  # Planifier l'exécution tous les jours à 11h UTC
+  # Planifier l'exécution tous les jours à 1h UTC
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "*/30 * * * *"
 
   # Permet de lancer manuellement le workflow
   workflow_dispatch:
 
 jobs:
-  run_script:
+  run_scripts:
     runs-on: ubuntu-latest
 
     steps:
+      # Étape 1 : Cloner le dépôt
       - name: Cloner le dépôt
         uses: actions/checkout@v3
 
+      # Étape 2 : Installer Python
       - name: Installer Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12.5"
+          python-version: "3.12.5"  # Remplace par ta version Python si nécessaire
 
+      # Étape 3 : Installer les dépendances
       - name: Installer les dépendances
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Exécuter le script Python
+      - name: Exécuter Telechargement.py
         run: |
           python code/Telechargement.py
+
+
+      - name: Exécuter mapecoroute
+        run: |
+          python code/EcoCompteurMap.py
+
+      - name: Exécuter mapecocercle
+        run: |
+          python code/EcoCompteurMap.py
+
+      - name: Exécuter mapecocercle
+        run: |
+          python code/EcoCompteurMap.py
+
+
+      - name: Exécuter MapPREDiction
+        run: |
+          python code/predictive_map.py
