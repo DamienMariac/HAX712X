@@ -72,3 +72,6 @@ jobs:
           git add .
           git commit -m "Mise à jour automatique du site"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
