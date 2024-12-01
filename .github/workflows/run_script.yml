@@ -3,7 +3,7 @@ name: Exécuter plusieurs scripts Python
 on:
   # Planifier l'exécution tous les jours à 1h UTC
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
 
   # Permet de lancer manuellement le workflow
   workflow_dispatch:
@@ -53,6 +53,13 @@ jobs:
 
       - name: Installer Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+
+      
+      
+
+      - name: Installer nbformat et Jupyter
+        run: |
+          python -m pip install nbformat jupyter
   
       - name: Rendre le site Quarto
         run: |
