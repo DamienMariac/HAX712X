@@ -3,7 +3,7 @@ name: Exécuter plusieurs scripts Python
 on:
   # Planifier l'exécution tous les jours à 1h UTC
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "10 11 * * *"
 
   # Permet de lancer manuellement le workflow
   workflow_dispatch:
