@@ -47,12 +47,12 @@ jobs:
           python code/EcoCompteurMap.py
 
 
-      - name: Exécuter MapPREDiction
-        run: |
-          python code/predictive_map.py
+      # - name: Exécuter MapPREDiction
+      #   run: |
+      #     python code/predictive_map.py
 
-          - name: Installer Quarto
-          uses: quarto-dev/quarto-actions/setup@v2
+      - name: Installer Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
   
       - name: Rendre le site Quarto
         run: |
