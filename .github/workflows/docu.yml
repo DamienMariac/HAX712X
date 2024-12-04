@@ -17,18 +17,16 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install dependencies
+      - name: Install Sphinx
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
           pip install sphinx
 
       - name: Build documentation
         run: |
-          cd documentation
-          make html
+          cd documentation 
+          make html  
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: documentation/build/html
+          publish_dir: documentation/build/html 
