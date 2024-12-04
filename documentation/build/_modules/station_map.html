@@ -85,15 +85,15 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Ajoute un marqueur sur une carte Folium à partir des données géographiques des stations VéloMagg.</span>
 
-<span class="sd">    Cette fonction crée un marqueur sur une carte en utilisant la localisation des stations.</span>
-<span class="sd">    Le marqueur est placé à la latitude et longitude spécifiées dans la ligne, et un popup est ajouté pour afficher le nom de la station). </span>
+<span class="sd">    Args:</span>
+<span class="sd">        param (pandas.Series) : Une ligne d&#39;un DataFrame contenant les informations nécessaires pour créer un marqueur. La ligne doit inclure au moins les colonnes suivantes :</span>
+<span class="sd">        - &#39;latitude&#39; (float) : Latitude de la station.</span>
+<span class="sd">        - &#39;longitude&#39; (float) : Longitude de la station.</span>
+<span class="sd">        - &#39;nom&#39; (str) : Nom de la station.</span>
+<span class="sd">        - &#39;secteur&#39; (str) : Secteur géographique de la station.</span>
+<span class="sd">        - &#39;type_stati&#39; (str) : Type de station (exemple : &quot;Vélo&quot; ou &quot;Parking&quot;).</span>
 
-<span class="sd">    : param row :</span>
-<span class="sd">        Une ligne de DataFrame (CSV par exemple) contenant les informations nécessaires pour créer un marqueur. La ligne comporte</span>
-<span class="sd">        au moins les colonnes suivantes : &#39;latitude&#39;, &#39;longitude&#39;, &#39;nom&#39;, &#39;secteur&#39;, et &#39;type_stati&#39;.</span>
-
-<span class="sd">    Remarque:</span>
-<span class="sd">    Cette fonction ne peut être utilisé que si un objet `map` de type `folium.Map` est déjà créé et accessible.</span>
+<span class="sd">    Note: Cette fonction ne peut être utilisé que si un objet `map` de type `folium.Map` est déjà créé et accessible.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
         <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]],</span>

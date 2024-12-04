@@ -81,13 +81,18 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="CirculationDuJour.get_color">
 <span class="sig-prename descclassname"><span class="pre">CirculationDuJour.</span></span><span class="sig-name descname"><span class="pre">get_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/CirculationDuJour.html#get_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#CirculationDuJour.get_color" title="Lien vers cette définition"></a></dt>
-<dd><p>Fonction pour déterminer la couleur d’une route en fonction de l’intensité du trafic.</p>
+<dd><p>Détermine une couleur en fonction de l’intensité donnée.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>intensity</strong> (<em>float</em>) – L’intensité du trafic pour une route donnée.</p>
+<dd class="field-odd"><p><strong>param</strong> (<em>int</em>) – La valeur numérique représentant l’intensité doit être un entier positif.</p>
 </dd>
 <dt class="field-even">Renvoie<span class="colon">:</span></dt>
-<dd class="field-even"><p>La couleur associée à l’intensité du trafic.</p>
+<dd class="field-even"><p>Une chaîne de caractères représentant une couleur :
+- “darkred” : si l’intensité est supérieure à 2000,
+- “red” : si l’intensité est supérieure à 1000,
+- “darkorange” : si l’intensité est supérieure à 500,
+- “gold” : si l’intensité est supérieure à 250,
+- “green” : si l’intensité est inférieure ou égale à 250.</p>
 </dd>
 <dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
@@ -99,13 +104,15 @@
 <dt class="sig sig-object py" id="fusion_archives.fusion_csv">
 <span class="sig-prename descclassname"><span class="pre">fusion_archives.</span></span><span class="sig-name descname"><span class="pre">fusion_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fusion_archives.html#fusion_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fusion_archives.fusion_csv" title="Lien vers cette définition"></a></dt>
 <dd><p>Fusionne tous les fichiers CSV d’un dossier donné en un seul fichier CSV de sortie.</p>
-<p>Cette fonction parcourt tous les fichiers dans le dossier spécifié, vérifie si le fichier est un fichier CSV
-(ayant l’extension “.csv”), puis charge chaque fichier CSV en un DataFrame Pandas. Les DataFrames sont ensuite
-concaténés pour créer un DataFrame unique sous format CSV.</p>
-<dl class="simple">
-<dt>:param folder_input :</dt><dd><p>Le chemin vers le dossier contenant les fichiers CSV à fusionner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>str</em>) – Chemin du dossier contenant les fichiers CSV à fusionner.</p>
 </dd>
-<dt>:param output_file :</dt><dd><p>Le chemin vers le dossier contenant les fichiers CSV à fusionner</p>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Chemin complet du fichier CSV de sortie (incluant le nom et l’extension <cite>.csv</cite>).</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -114,15 +121,19 @@ concaténés pour créer un DataFrame unique sous format CSV.</p>
 <dt class="sig sig-object py" id="station_map.add_marker">
 <span class="sig-prename descclassname"><span class="pre">station_map.</span></span><span class="sig-name descname"><span class="pre">add_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/station_map.html#add_marker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#station_map.add_marker" title="Lien vers cette définition"></a></dt>
 <dd><p>Ajoute un marqueur sur une carte Folium à partir des données géographiques des stations VéloMagg.</p>
-<p>Cette fonction crée un marqueur sur une carte en utilisant la localisation des stations.
-Le marqueur est placé à la latitude et longitude spécifiées dans la ligne, et un popup est ajouté pour afficher le nom de la station).</p>
-<dl class="simple">
-<dt>: param row :</dt><dd><p>Une ligne de DataFrame (CSV par exemple) contenant les informations nécessaires pour créer un marqueur. La ligne comporte
-au moins les colonnes suivantes : “latitude”, “longitude”, “nom”, “secteur”, et “type_stati”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>param</strong> (<em>pandas.Series</em>) – Une ligne d’un DataFrame contenant les informations nécessaires pour créer un marqueur. La ligne doit inclure au moins les colonnes suivantes :</p></li>
+<li><p><strong>'latitude'</strong> (<em>-</em>) – Latitude de la station.</p></li>
+<li><p><strong>'longitude'</strong> (<em>-</em>) – Longitude de la station.</p></li>
+<li><p><strong>'nom'</strong> (<em>-</em>) – Nom de la station.</p></li>
+<li><p><strong>'secteur'</strong> (<em>-</em>) – Secteur géographique de la station.</p></li>
+<li><p><strong>'type_stati'</strong> (<em>-</em>) – Type de station (exemple : « Vélo » ou « Parking »).</p></li>
+</ul>
 </dd>
 </dl>
-<p>Remarque:
-Cette fonction ne peut être utilisé que si un objet <cite>map</cite> de type <cite>folium.Map</cite> est déjà créé et accessible.</p>
+<p>Note: Cette fonction ne peut être utilisé que si un objet <cite>map</cite> de type <cite>folium.Map</cite> est déjà créé et accessible.</p>
 </dd></dl>
 
 </section>

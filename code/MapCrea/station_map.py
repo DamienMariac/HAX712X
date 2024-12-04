@@ -11,15 +11,15 @@ def add_marker(row):
     """
     Ajoute un marqueur sur une carte Folium à partir des données géographiques des stations VéloMagg.
 
-    Cette fonction crée un marqueur sur une carte en utilisant la localisation des stations.
-    Le marqueur est placé à la latitude et longitude spécifiées dans la ligne, et un popup est ajouté pour afficher le nom de la station). 
+    Args:
+        param (pandas.Series) : Une ligne d'un DataFrame contenant les informations nécessaires pour créer un marqueur. La ligne doit inclure au moins les colonnes suivantes :
+        - 'latitude' (float) : Latitude de la station.
+        - 'longitude' (float) : Longitude de la station.
+        - 'nom' (str) : Nom de la station.
+        - 'secteur' (str) : Secteur géographique de la station.
+        - 'type_stati' (str) : Type de station (exemple : "Vélo" ou "Parking").
 
-    : param row :
-        Une ligne de DataFrame (CSV par exemple) contenant les informations nécessaires pour créer un marqueur. La ligne comporte
-        au moins les colonnes suivantes : 'latitude', 'longitude', 'nom', 'secteur', et 'type_stati'.
-
-    Remarque:
-    Cette fonction ne peut être utilisé que si un objet `map` de type `folium.Map` est déjà créé et accessible.
+    Note: Cette fonction ne peut être utilisé que si un objet `map` de type `folium.Map` est déjà créé et accessible.
     """
     folium.Marker(
         location=[row['latitude'], row['longitude']],
