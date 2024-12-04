@@ -17,9 +17,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Sphinx
+      - name: Install Sphinx and theme
         run: |
           pip install sphinx
+          pip install sphinx_rtd_theme
+          
 
       - name: Build documentation
         run: |
