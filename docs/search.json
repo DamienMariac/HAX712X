@@ -11,7 +11,14 @@
     "href": "index.html",
     "title": "BikeMap",
     "section": "",
-    "text": "Bienvenue sur le site BikeMap.\n\nTrafique vélo d’hier\nCette carte montre le flux de circulation des vélos et des piétons sur les routes de Montpellier. Les routes sont colorées en fonction de l’intensité du trafic observé.\n\n\nLes données proviennent des éco-compteurs de Montpellier. Une seconde carte illustre également la densité de passages autour de ces éco-compteurs.\n\n\n\n\n\n\n Back to top"
+    "text": "Bienvenue sur le site BikeMap."
+  },
+  {
+    "objectID": "index.html#trafique-vélo-dhier",
+    "href": "index.html#trafique-vélo-dhier",
+    "title": "BikeMap",
+    "section": "Trafique vélo d’hier",
+    "text": "Trafique vélo d’hier\nCette carte interactive montre le flux de circulation des vélos et des piétons sur les routes de Montpellier hier. Les routes sont colorées en fonction de l’intensité du trafic observé.\n\n\nLes données proviennent des éco-compteurs de Montpellier. Une seconde carte interactive illustre également la densité de passages autour de ces éco-compteurs."
   },
   {
     "objectID": "webpage/prevision/prevision.html",
