@@ -8,14 +8,11 @@ def fusion_csv(folder_input, output_file):
     """
     Fusionne tous les fichiers CSV d'un dossier donné en un seul fichier CSV de sortie.
 
-    Cette fonction parcourt tous les fichiers dans le dossier spécifié, vérifie si le fichier est un fichier CSV
-    (ayant l'extension '.csv'), puis charge chaque fichier CSV en un DataFrame Pandas. Les DataFrames sont ensuite
-    concaténés pour créer un DataFrame unique sous format CSV.
+    Args:
+        param (str): Chemin du dossier contenant les fichiers CSV à fusionner.
+    Return: 
+        (str): Chemin complet du fichier CSV de sortie (incluant le nom et l'extension `.csv`).
 
-    :param folder_input :
-        Le chemin vers le dossier contenant les fichiers CSV à fusionner.
-    :param output_file : 
-        Le chemin vers le dossier contenant les fichiers CSV à fusionner
     """
     data = []
     

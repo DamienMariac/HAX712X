@@ -36,6 +36,20 @@ joined_gdf = gpd.sjoin_nearest(routes_gdf, traffic_gdf, how="inner", max_distanc
 
 # Fonction pour déterminer la couleur
 def get_color(intensity):
+    """
+    Détermine une couleur en fonction de l'intensité donnée.
+
+    Args: 
+        param (int) : La valeur numérique représentant l'intensité doit être un entier positif.
+    
+    Return: 
+        str : Une chaîne de caractères représentant une couleur :
+        - 'darkred' : si l'intensité est supérieure à 2000,
+        - 'red' : si l'intensité est supérieure à 1000,
+        - 'darkorange' : si l'intensité est supérieure à 500,
+        - 'gold' : si l'intensité est supérieure à 250,
+        - 'green' : si l'intensité est inférieure ou égale à 250.
+    """
     if intensity > 2000:
         return 'darkred'
     elif intensity > 1000:
