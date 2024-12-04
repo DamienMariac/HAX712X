@@ -11,13 +11,13 @@
     "href": "index.html",
     "title": "BikeMap",
     "section": "",
-    "text": "Bienvenue, voici les cartes :\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "Bienvenue sur le site BikeMap.\n\nTrafique vélo d’hier\nCette carte montre le flux de circulation des vélos et des piétons sur les routes de Montpellier. Les routes sont colorées en fonction de l’intensité du trafic observé.\n\n\nLes données proviennent des éco-compteurs de Montpellier. Une seconde carte illustre également la densité de passages autour de ces éco-compteurs.\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "webpage/prevision/prevision.html",
     "href": "webpage/prevision/prevision.html",
     "title": "Prévision du trafic",
     "section": "",
-    "text": "Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic :\n\n\nLUNDI MARDI MERCREDI JEUDI VENDREDI SAMEDI DIMANCHE\n\n\n\n\n\n\n\n\n\n Back to top"
+    "text": "Back to top"
   }
 ]

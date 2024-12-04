@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-462b3f8ec33f849403abe7efd52f2f4e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -129,84 +129,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Bienvenue, voici les cartes :</p>
+<p>Bienvenue sur le site BikeMap.</p>
+<section id="trafique-vélo-dhier" class="level1">
+<h1>Trafique vélo d’hier</h1>
+<p>Cette carte montre le flux de circulation des vélos et des piétons sur les routes de Montpellier. Les routes sont colorées en fonction de l’intensité du trafic observé.</p>
 <iframe src="map/ecoCompteurRoutes.html" width="800" height="600">
 </iframe>
+<p>Les données proviennent des éco-compteurs de Montpellier. Une seconde carte illustre également la densité de passages autour de ces éco-compteurs.</p>
 <iframe src="map/ecoCompteurCercle.html" width="800" height="600">
 </iframe>
-<!-- 
-
-#| warning: false
-#| echo: false
-
-import geopandas as gpd
-import folium
-import json
-import shapely
-from shapely.geometry import Point
-from IPython.display import HTML
-
-# Données
-traffic_data_path = 'data/eco_comptage.json'
-with open(traffic_data_path, 'r') as file:
-    traffic_data = json.load(file)
 
 
-valid_traffic_data = [
-    item for item in traffic_data 
-    if 'coordinates' in item['location'] and item['location']['coordinates'][0] is not None and item['location']['coordinates'][1] is not None
-]
-
-traffic_gdf = gpd.GeoDataFrame(
-    valid_traffic_data,
-    geometry=[Point(data['location']['coordinates']) for data in valid_traffic_data],
-    crs="EPSG:4326"
-)
-
-
-routes_gdf = gpd.read_file('data/export.geojson')
-routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
-
-
-joined_gdf = gpd.sjoin_nearest(routes_gdf, traffic_gdf, how="inner", max_distance=100)
-
-
-def get_color(intensity):
-    if intensity > 2000:
-        return 'darkred'
-    elif intensity > 1000 and intensity < 2000:
-        return 'red'
-    elif intensity > 500 and intensity < 1000:
-        return 'darkorange'
-    elif intensity > 250 and intensity < 500:
-        return 'gold'
-    else:
-        return 'green'
-
-
-map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)
-
-
-for _, row in joined_gdf.iterrows():
-    route_color = get_color(row['intensity'])
-    if isinstance(row.geometry, shapely.geometry.LineString):
-        coords = [[p[1], p[0]] for p in list(row.geometry.coords)]
-    elif isinstance(row.geometry, shapely.geometry.Polygon):
-        coords = [[p[1], p[0]] for p in list(row.geometry.exterior.coords)]
-    else:
-        continue 
-
-    folium.PolyLine(
-        locations=coords,
-        color=route_color,
-        weight=5
-    ).add_to(map)
-
-
-HTML(map._repr_html_())
-``` -->
-
-
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -291,6 +225,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -401,6 +337,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

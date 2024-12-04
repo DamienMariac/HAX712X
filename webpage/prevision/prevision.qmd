@@ -8,6 +8,19 @@ execute:
 jupyter: python3
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <p>Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic : </p>
 
 <div id="button-container">
@@ -33,4 +46,4 @@ jupyter: python3
     const iframe = document.getElementById('map-frame');
     iframe.src = `map/${mapFile}`;  // attention dossier map à laisser dans /docs
     }
-</script>
+</script> -->
