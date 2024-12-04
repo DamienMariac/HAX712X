@@ -1,17 +1,17 @@
 Documentation API
 =================
 
-.. automodule:: CirculationDuJour
+.. automodule:: MapCrea.CirculationDuJour
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: fusion_archives
+.. automodule:: DataTraitements.fusion_archives
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: station_map
+.. automodule:: MapCrea.station_map
    :members:
    :undoc-members:
    :show-inheritance:

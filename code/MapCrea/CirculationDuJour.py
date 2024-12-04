@@ -43,10 +43,15 @@ def get_color(intensity):
     
     Return: 
         str : Une chaîne de caractères représentant une couleur :
+        
         - 'darkred' : si l'intensité est supérieure à 2000,
+        
         - 'red' : si l'intensité est supérieure à 1000,
+        
         - 'darkorange' : si l'intensité est supérieure à 500,
+        
         - 'gold' : si l'intensité est supérieure à 250,
+        
         - 'green' : si l'intensité est inférieure ou égale à 250.
     """
     if intensity > 2000:

@@ -13,11 +13,16 @@ def add_marker(row):
 
     Args:
         param (pandas.Series) : Une ligne d'un DataFrame contenant les informations nécessaires pour créer un marqueur. La ligne doit inclure au moins les colonnes suivantes :
-        - 'latitude' (float) : Latitude de la station.
-        - 'longitude' (float) : Longitude de la station.
-        - 'nom' (str) : Nom de la station.
-        - 'secteur' (str) : Secteur géographique de la station.
-        - 'type_stati' (str) : Type de station (exemple : "Vélo" ou "Parking").
+        
+            - 'latitude' (float) : Latitude de la station.
+            
+            - 'longitude' (float) : Longitude de la station.
+            
+            - 'nom' (str) : Nom de la station.
+            
+            - 'secteur' (str) : Secteur géographique de la station.
+            
+            - 'type_stati' (str) : Type de station.
 
     Note: Cette fonction ne peut être utilisé que si un objet `map` de type `folium.Map` est déjà créé et accessible.
     """
