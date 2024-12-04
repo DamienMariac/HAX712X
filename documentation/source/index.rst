@@ -9,12 +9,6 @@ Dans cette documentation, vous trouverez des informations détaillées sur les m
 
 .. toctree::
    :maxdepth: 2
-   :caption: Présentation du projet :
-
-   Cette section présente une vue d'ensemble du projet BikeMap, ses objectifs, ainsi que les principales fonctionnalités.
-   
-.. toctree::
-   :maxdepth: 2
    :caption: Sommaire :
 
    api
