@@ -6,14 +6,9 @@ execute:
 ---
 
 
-Bienvenue sur le site BikeMap.
+Bienvenue, voici les cartes :
 
-## Trafique vélo d'hier
-
-Cette carte interactive montre le flux de circulation des vélos et des piétons sur les routes de Montpellier hier. Les routes sont colorées en fonction de l'intensité du trafic observé.
 
 <iframe src="map/ecoCompteurRoutes.html" width="800" height="600"></iframe>
-
-Les données proviennent des éco-compteurs de Montpellier. Une seconde carte interactive illustre également la densité de passages autour de ces éco-compteurs.
 
 <iframe src="map/ecoCompteurCercle.html" width="800" height="600"></iframe>

@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "BikeMap",
     "section": "",
-    "text": "Bienvenue sur le site BikeMap."
+    "text": "Bienvenue, voici les cartes :\n\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html#trafique-vélo-dhier",
@@ -25,6 +25,6 @@
     "href": "webpage/prevision/prevision.html",
     "title": "Prévision du trafic",
     "section": "",
-    "text": "Back to top"
+    "text": "LUNDI MARDI MERCREDI JEUDI VENDREDI SAMEDI DIMANCHE\n\n\n\n\n\n\n\n\n\n Back to top"
   }
 ]

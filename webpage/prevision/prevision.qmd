@@ -8,42 +8,96 @@ execute:
 jupyter: python3
 ---
 
+<div style="margin-bottom: 20px;">
+  <button class="btn btn-blue" onclick="showMap('map1')">LUNDI</button>
+  <button class="btn btn-green" onclick="showMap('map2')">MARDI</button>
+  <button class="btn btn-red" onclick="showMap('map3')">MERCREDI</button>
+  <button class="btn btn-orange" onclick="showMap('map4')">JEUDI</button>
+  <button class="btn btn-purple" onclick="showMap('map5')">VENDREDI</button>
+  <button class="btn btn-teal" onclick="showMap('map6')">SAMEDI</button>
+  <button class="btn btn-gray" onclick="showMap('map7')">DIMANCHE</button>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<p>Sélectionnez le jour pour lequel vous souhaitez visualiser la prévision du trafic : </p>
-
-<div id="button-container">
-  <button onclick="showMap('monday_map.html')">LUNDI</button>
-  <button onclick="showMap('tuesday_map.html')">MARDI</button>
-  <button onclick="showMap('wednesday_map.html')">MERCREDI</button>
-  <button onclick="showMap('thursday_map.html')">JEUDI</button>
-  <button onclick="showMap('friday_map.html')">VENDREDI</button>
-  <button onclick="showMap('saturday_map.html')">SAMEDI</button>
-  <button onclick="showMap('sunday_map.html')">DIMANCHE</button>
+<div id="map-container" style="display:none; margin-top: 20px;">
+  <iframe id="map-iframe" src="" width="800" height="600" style="opacity: 0; transition: opacity 0.5s ease-in-out;"></iframe>
 </div>
 
 <style>
-  button {color: white}
+/* Styles généraux pour les boutons */
+.btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  margin: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Couleurs spécifiques pour chaque bouton */
+.btn-blue {
+  background-color: #007BFF;
+}
+.btn-green {
+  background-color: #28A745;
+}
+.btn-red {
+  background-color: #DC3545;
+}
+.btn-orange {
+  background-color: #FD7E14;
+}
+.btn-purple {
+  background-color: #6F42C1;
+}
+.btn-teal {
+  background-color: #20C997;
+}
+.btn-gray {
+  background-color: #6C757D;
+}
+
+/* Effet au survol */
+.btn:hover {
+  background-color: #333; /* Couleur sombre au survol */
+  transform: scale(1.1); /* Légère mise en avant */
+}
+
+/* Ajout d'un léger effet d'ombre */
+.btn:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
 </style>
 
-<div id="map-container">
-  <iframe id="map-frame" src="" width="800" height="600" style="border: none;"></iframe>
-</div>
-
 <script>
-  function showMap(mapFile) {
-    const iframe = document.getElementById('map-frame');
-    iframe.src = `map/${mapFile}`;  // attention dossier map à laisser dans /docs
-    }
-</script> -->
+function showMap(mapId) {
+  const mapContainer = document.getElementById("map-container");
+  const iframe = document.getElementById("map-iframe");
+
+  // Définir les chemins des cartes en fonction de l'identifiant
+  const maps = {
+    map1: "../../map/monday_map.html",
+    map2: "../../map/tuesday_map.html",
+    map3: "../../map/wednesday_map.html",
+    map4: "../../map/thursday_map.html",
+    map5: "../../map/friday_map.html",
+    map6: "../../map/saturday_map.html",
+    map7: "../../map/sunday_map.html",
+  };
+
+  // Diminue l'opacité pour une transition fluide
+  iframe.style.opacity = 0;
+
+  // Attendre un instant avant de changer la carte
+  setTimeout(() => {
+    iframe.src = maps[mapId]; // Charger la nouvelle carte
+    iframe.onload = () => {
+      iframe.style.opacity = 1; // Restaurer l'opacité une fois chargée
+    };
+  }, 500);
+
+  // Afficher le conteneur
+  mapContainer.style.display = "block";
+}
+</script>

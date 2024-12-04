@@ -6,6 +6,18 @@ project:
     - webpage/prevision/prevision.qmd
     - webpage/video/video.qmd
 
+resources:
+  - map/ecoCompteurRoutes.html
+  - map/ecoCompteurCercle.html
+  - map/monday_map.html
+  - map/tuesday_map.html
+  - map/wednesday_map.html
+  - map/thursday_map.html
+  - map/friday_map.html
+  - map/saturday_map.html
+  - map/sunday_map.html
+
+
 
 website:
   back-to-top-navigation: true
@@ -34,35 +46,6 @@ sidebar:
 
 
 
-
 format:
   html:
     theme: solar
-
-
-# project:
-#   type: website
-#   output-dir: docs
-#   render :
-#     - index.qmd
-#     - docs/onglet/test.qmd
-
-# website:
-#   back-to-top-navigation: true
-#   title: "Bike MAP"
-
-# sidebar:
-#   - id: onglet
-#     title: "onglet"
-#     collapse-level: 3
-#     contents:
-#       - docs/onglet/test.qmd
-
-
-
-# format:
-#   html:
-#     theme: solar # ON PEUT CHANGER LE THEME PAS DE SOUCIS
-
-
-
