@@ -12,3 +12,8 @@ Bienvenue, voici les cartes :
 <iframe src="map/ecoCompteurRoutes.html" width="800" height="600"></iframe>
 
 <iframe src="map/ecoCompteurCercle.html" width="800" height="600"></iframe>
+
+# Bienvenue sur le site
+
+Ce site présente un projet utilisant Quarto et Sphinx. Vous pouvez consulter notre documentation complète sur la [documentation Sphinx ici](webpage/docu/index.html).
+

@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "BikeMap",
     "section": "",
-    "text": "Bienvenue, voici les cartes :\n\n\n\n\n\n\n\n Back to top"
+    "text": "Bienvenue, voici les cartes :\n\n\n\n\n\nBienvenue sur le site\nCe site présente un projet utilisant Quarto et Sphinx. Vous pouvez consulter notre documentation complète sur la documentation Sphinx ici.\n\n\n\n\n Back to top"
   },
   {
     "objectID": "webpage/prevision/prevision.html",
@@ -19,5 +19,12 @@
     "title": "Prévision du trafic",
     "section": "",
     "text": "LUNDI MARDI MERCREDI JEUDI VENDREDI SAMEDI DIMANCHE\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "webpage/docu/index.html",
+    "href": "webpage/docu/index.html",
+    "title": "Documentation",
+    "section": "",
+    "text": ""
   }
 ]

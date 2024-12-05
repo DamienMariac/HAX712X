@@ -4,7 +4,7 @@ import json
 from shapely.geometry import Point
 import os
 
-traffic_data='../data/concatenated_data.jsonl'
+traffic_data='data/concatenated_data.jsonl'
 with open(traffic_data, 'r') as file:
     for line in file:
         traffic_data = [json.loads(line.strip())]
@@ -28,7 +28,7 @@ traffic_gdf = gpd.GeoDataFrame(
 )
 
 # Charger les routes depuis un fichier GeoJSON
-routes_gdf = gpd.read_file('../data/export.geojson')
+routes_gdf = gpd.read_file('data/export.geojson')
 routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
 
 # Effectuer une jointure spatiale
@@ -47,11 +47,11 @@ def get_color(intensity):
         
         - 'darkred' : si l'intensité est supérieure à 2000,
         
-        - 'red' : si l'intensité est supérieure à 1000,
+        - 'red' : si l'intensité est supérieure à 1000 et inférieur à 2000,
         
-        - 'darkorange' : si l'intensité est supérieure à 500,
+        - 'darkorange' : si l'intensité est supérieure à 500 et inférieur à 1000,
         
-        - 'gold' : si l'intensité est supérieure à 250,
+        - 'gold' : si l'intensité est supérieure à 250 et inférieur à 500,
         
         - 'green' : si l'intensité est inférieure ou égale à 250.
     """
@@ -79,6 +79,6 @@ for _, row in joined_gdf.iterrows():
         ).add_to(map)
 
 
-output_dir = '../map'
+output_dir = 'map'
 os.makedirs(output_dir, exist_ok=True)
 map.save(os.path.join(output_dir, 'ecoCompteurRoutes.html'))
