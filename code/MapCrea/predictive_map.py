@@ -6,7 +6,7 @@ import shapely
 from CirculationDuJour import get_color
 
 
-data = pd.read_csv('data/all_archive.csv', delimiter=';')
+data = pd.read_csv('../data/all_archive.csv', delimiter=';')
 
 data['coordinates'] = list(zip(data['longitude'], data['latitude']))
 data['date'] = pd.to_datetime(data['date'].str.split('/').str[0])

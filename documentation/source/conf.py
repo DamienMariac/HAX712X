@@ -9,6 +9,8 @@
 import os
 import sys
 
+sys.path.insert(0, os.path.abspath('../code'))
+
 project = 'BikeMap'
 copyright = '2024, Damien Mariac, Abdoul-El Sawadogo, Julien Ollier, Marine Germain'
 author = 'Damien Mariac, Abdoul-El Sawadogo, Julien Ollier, Marine Germain'
@@ -28,11 +30,6 @@ language = 'fr'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-#html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_rtd_theme'
 
-
-import os
-import sys
-
-sys.path.insert(0, os.path.abspath('../../code'))
-
+autodoc_member_order = 'bysource'

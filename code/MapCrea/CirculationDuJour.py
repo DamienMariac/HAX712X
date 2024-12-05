@@ -4,9 +4,10 @@ import json
 from shapely.geometry import Point
 import os
 
-traffic_data_path = 'data/concatenated_data.jsonl'
-with open(traffic_data_path, 'r') as file:
-    traffic_data = [json.loads(line.strip()) for line in file]
+traffic_data='../data/concatenated_data.jsonl'
+with open(traffic_data, 'r') as file:
+    for line in file:
+        traffic_data = [json.loads(line.strip())]
 
 # Valider les données pour s'assurer que les coordonnées sont valides (Souvent des problemes)
 valid_traffic_data = [
@@ -27,7 +28,7 @@ traffic_gdf = gpd.GeoDataFrame(
 )
 
 # Charger les routes depuis un fichier GeoJSON
-routes_gdf = gpd.read_file('data/export.geojson')
+routes_gdf = gpd.read_file('../data/export.geojson')
 routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
 
 # Effectuer une jointure spatiale
