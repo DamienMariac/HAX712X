@@ -7,6 +7,8 @@ execute:
   panel: true
 jupyter: python3
 ---
+Planifiez vos déplacements à vélo grâce à nos prévisions hebdomadaires. 
+Choisissez un jour de la semaine à l’aide des boutons ci-dessous pour afficher une carte du trafic prévu.
 
 <!-- Conteneur pour l'animation -->
 <div id="bike-animation">
@@ -140,3 +142,5 @@ function showMap(mapId) {
   mapContainer.style.display = "block";
 }
 </script>
+
+Ces prévisions sont basées sur une moyenne des données sur une année et offrent un aperçu des zones les plus fréquentées à chaque jour de la semaine.
