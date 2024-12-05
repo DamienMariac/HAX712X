@@ -64,8 +64,8 @@ Packages pour l'édition multimédia
 
   Cette bibliothèque est dédiée à l'édition vidéo. Elle contribue à découper, assembler et manipuler des vidéos.
 
-Packages internes au projet : 
------------------------------
+Packages internes au projet
+---------------------------
 
 - **DataProcessing**
 

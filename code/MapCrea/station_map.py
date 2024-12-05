@@ -2,7 +2,7 @@ import pandas as pd
 import folium
 
 
-station = pd.read_csv('../data/stationcoor.csv', delimiter=',')
+station = pd.read_csv('data/stationcoor.csv', delimiter=',')
 
 map_center = [43.610769, 3.876716]
 map = folium.Map(location=map_center, zoom_start=13)

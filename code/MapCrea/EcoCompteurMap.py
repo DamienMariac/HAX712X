@@ -3,7 +3,7 @@ import folium
 
 # Charger les données JSON Lines
 data = []
-with open('../data/concatenated_data.jsonl', 'r') as file:
+with open('data/concatenated_data.jsonl', 'r') as file:
     for line in file:
         data.append(json.loads(line.strip()))
 
