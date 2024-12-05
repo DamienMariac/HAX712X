@@ -48,23 +48,15 @@ Notre objectif est de vous informer sur le trafic cycliste à Montpellier afin d
 
 - L'onglet *Prédiction* vous indique le trafic moyen de chaque jour le semaine.
 - L'onglet *Vidéo* illustre la circulation sur la journée du .. .
-- Le lien suivant vous donne accés à la documentation du projet : [documentation Sphinx ici](documentation/build/index.html).
+- Le lien suivant vous donne accés à la documentation du projet : [Documentation Sphinx](documentation/build/index.html).
 
-
-  
 Cette carte interactive affiche le trafic cycliste de la veille. Les données se mettent à jour quotidiennement, vous permettant ainsi de planifier vos trajets en toute sérénité.
 
 <iframe src="map/ecoCompteurRoutes.html" width="800" height="600"></iframe>
 
-
-
-
 Cette carte vous donne l'intensité des éco-compteurs de Montpellier.
 
 <iframe src="map/ecoCompteurCercle.html" width="800" height="600"></iframe>
-
-
-
 
 Cette carte vous donne la localisation des stations VéloMagg avec leur nom, leur secteur et leur type.
 
