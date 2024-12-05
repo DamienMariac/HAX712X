@@ -48,4 +48,5 @@ sidebar:
 
 format:
   html:
-    theme: solar
+    format : solar
+    css: style.css

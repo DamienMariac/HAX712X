@@ -5,6 +5,33 @@ execute:
   enabled: true
 ---
 
+<!-- Conteneur pour l'animation -->
+<div id="bike-animation">
+  <img src="webpage/bike.png" alt="Vélo" style="width: 100%;">
+</div>
+
+<script>
+function playBikeAnimation() {
+  const bike = document.getElementById("bike-animation");
+
+  bike.classList.remove("bike-active");
+  void bike.offsetWidth; 
+  bike.classList.add("bike-active");
+
+  setTimeout(() => {
+    bike.classList.remove("bike-active");
+  }, 1500);
+}
+
+document.querySelectorAll(".navbar a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    playBikeAnimation();
+  });
+});
+if (window.location.pathname.includes("index") || window.location.pathname === "/") {
+  playBikeAnimation();
+}
+</script>
 
 Bienvenue sur le projet BikeMap !
 

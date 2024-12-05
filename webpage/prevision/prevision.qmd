@@ -8,6 +8,31 @@ execute:
 jupyter: python3
 ---
 
+<!-- Conteneur pour l'animation -->
+<div id="bike-animation">
+  <img src="../bike.png" alt="Vélo" style="width: 100%;">
+</div>
+
+<script>
+function playBikeAnimation() {
+  const bike = document.getElementById("bike-animation");
+  bike.classList.add("bike-active");
+
+  
+  setTimeout(() => {
+    bike.classList.remove("bike-active");
+  }, 1000); // 1 seconde
+}
+
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    playBikeAnimation();
+  });
+});
+</script>
+
+
+
 <div style="margin-bottom: 20px;">
   <button class="btn btn-blue" onclick="showMap('map1')">LUNDI</button>
   <button class="btn btn-green" onclick="showMap('map2')">MARDI</button>
