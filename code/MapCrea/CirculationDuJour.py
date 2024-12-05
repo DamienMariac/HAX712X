@@ -79,6 +79,6 @@ for _, row in joined_gdf.iterrows():
         ).add_to(map)
 
 
-output_dir = 'map'
+output_dir = '../map'
 os.makedirs(output_dir, exist_ok=True)
 map.save(os.path.join(output_dir, 'ecoCompteurRoutes.html'))

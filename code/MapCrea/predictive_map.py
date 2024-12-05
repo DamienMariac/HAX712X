@@ -17,7 +17,7 @@ trafique_moy = data.groupby(['day_of_week', 'coordinates']).agg({
     'intensity': 'mean'
 }).reset_index()
 
-routes_gdf = gpd.read_file('data/export.geojson')
+routes_gdf = gpd.read_file('../data/export.geojson')
 routes_gdf = routes_gdf.to_crs("EPSG:4326")
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
