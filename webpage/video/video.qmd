@@ -7,7 +7,7 @@ execute:
 
 Voila une video représentant la circulation le 01-09-2024 :
 
-![video velomag](../../video/montpelliervelo0901.gif)
+![video velomag](../../code/video/montpelliervelo0901.gif)
 
 
 <!-- Conteneur pour l'animation -->

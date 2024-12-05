@@ -49,4 +49,6 @@ Cette carte vous donne l'intensité des éco-compteurs de Montpellier.
 
 <iframe src="map/ecoCompteurCercle.html" width="800" height="600"></iframe>
 
+Cette carte vous donne la localisation des velomagg.
 
+<iframe src="map/bikestation_map.html" width="800" height="600"></iframe>
