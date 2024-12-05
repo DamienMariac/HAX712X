@@ -135,26 +135,34 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="webpage/bike.png" alt="Vélo" style="width: 100%;"></p>
 </div>
 <script>
-function playBikeAnimation() {
+// Fonction pour jouer l'animation
+function playBikeAnimation(callback) {
   const bike = document.getElementById("bike-animation");
 
+  // Réinitialise l'état de l'animation
   bike.classList.remove("bike-active");
-  void bike.offsetWidth; 
+  void bike.offsetWidth; // Force le recalcul du style
   bike.classList.add("bike-active");
 
+  // Exécute la fonction callback après 1,5 seconde (durée de l'animation)
   setTimeout(() => {
     bike.classList.remove("bike-active");
-  }, 1500);
+    if (callback) callback();
+  }, 1500); // Durée de l'animation
 }
 
+// Gestion des clics sur la navbar
 document.querySelectorAll(".navbar a").forEach((link) => {
   link.addEventListener("click", (e) => {
-    playBikeAnimation();
+    e.preventDefault(); // Bloque la navigation immédiate
+
+    const href = link.href; // Récupère le lien cible
+    playBikeAnimation(() => {
+      // Redirige après l'animation
+      window.location.href = href;
+    });
   });
 });
-if (window.location.pathname.includes("index") || window.location.pathname === "/") {
-  playBikeAnimation();
-}
 </script>
 <p>Bienvenue sur le projet BikeMap !</p>
 <p>Notre objectif est de vous informer sur le trafic cycliste à Montpellier afin de vous aider à choisir les meilleurs itinéraires et les moments les plus calmes pour vos trajets. Sur cette page, vous trouverez une carte sur laquelle pouvez explorer les zones de la ville avec une visualisation dynamique de l’intensité du trafic à vélo, vous aidant à choisir les itinéraires les plus adaptés à vos besoins. Que vous soyez un cycliste quotidien ou un utilisateur occasionnel, notre plateforme vous permet de mieux comprendre la circulation et de faciliter vos déplacements dans Montpellier.</p>

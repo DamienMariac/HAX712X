@@ -14,22 +14,36 @@ jupyter: python3
 </div>
 
 <script>
-function playBikeAnimation() {
+// Fonction pour jouer l'animation
+function playBikeAnimation(callback) {
   const bike = document.getElementById("bike-animation");
+
+  // Réinitialise l'état de l'animation
+  bike.classList.remove("bike-active");
+  void bike.offsetWidth; // Force le recalcul du style
   bike.classList.add("bike-active");
 
-  
+  // Exécute la fonction callback après 1,5 seconde (durée de l'animation)
   setTimeout(() => {
     bike.classList.remove("bike-active");
-  }, 1000); // 1 seconde
+    if (callback) callback();
+  }, 1500); // Durée de l'animation
 }
 
-document.querySelectorAll(".navbar a").forEach(link => {
+// Gestion des clics sur la navbar
+document.querySelectorAll(".navbar a").forEach((link) => {
   link.addEventListener("click", (e) => {
-    playBikeAnimation();
+    e.preventDefault(); // Bloque la navigation immédiate
+
+    const href = link.href; // Récupère le lien cible
+    playBikeAnimation(() => {
+      // Redirige après l'animation
+      window.location.href = href;
+    });
   });
 });
 </script>
+
 
 
 
