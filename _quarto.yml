@@ -16,9 +16,11 @@ resources:
   - map/friday_map.html
   - map/saturday_map.html
   - map/sunday_map.html
-  - documentation/build/html/_static/**
-  - documentation/build/html/_static/**  
-  - documentation/build/html/_sources/** 
+  - documentation/build/html/_static/** ##
+  - documentation/build/html/_static/**  ## Je ne sais pas si c'est necessaire
+  - documentation/build/html/_sources/** ##
+  - documentation/build/html/fonction.html
+  - documentation/build/html/package.html
 
 
 
