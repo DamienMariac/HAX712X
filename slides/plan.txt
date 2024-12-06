@@ -1,0 +1,22 @@
+1. Introduction (Marine)
+2. Trafic de la veille (Damien)
+3. Prédiction : moyenne sur un an par jour de la semaine (Marine)
+4. Vidéo (+ difficulté à générer plusieurs vidéos par choix de date) (Kader)
+5. Site (Damien + Kader)
+6. Difficultés : Github actions (Damien) + documentation (Marine) + transformer notre code en classe/module (Marine?)
+7. Conclusion + ouverture et améliorations (météo, travaux, code couleur continue map) (Kader)
+
+Slides : 
+ 1. Introduction
+ 2. Trafic (code)
+ 3. Prédiction (code)
+ 4. résultats de map + code couleur 
+ 5. Vidéo (code)
+ 6. Site (résultat)
+ 7. Site (code + github pages)
+ 8. Difficulté 1 : Github action
+ 9. Difficulté 2 : documentation
+ 10. Difficulté 3 : transformation classe/module
+ 11. Conclusion 
+ 12. Crédits : overpass, chatgpt, stackoverflow, sphinx, youtube
+ 13. Bibliographie
