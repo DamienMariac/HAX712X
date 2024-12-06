@@ -16,7 +16,9 @@ resources:
   - map/friday_map.html
   - map/saturday_map.html
   - map/sunday_map.html
+  - documentation/build/html/_static/**
   - documentation/build/html/_static/**  
+  - documentation/build/html/_sources/** 
 
 
 
