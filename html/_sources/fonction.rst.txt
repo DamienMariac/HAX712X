@@ -16,3 +16,7 @@ Fonctions
    :undoc-members:
    :show-inheritance:
 
+.. automodule:: VideoCrea.video
+   :members:
+   :undoc-members:
+   :show-inheritance:
