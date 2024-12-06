@@ -9,7 +9,8 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('../code'))
+sys.path.insert(0, os.path.abspath('../../code'))
+print("sys.path:", sys.path)
 
 project = 'BikeMap'
 copyright = '2024, Damien Mariac, Abdoul-El Sawadogo, Julien Ollier, Marine Germain'
