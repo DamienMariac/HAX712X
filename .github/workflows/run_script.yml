@@ -28,7 +28,7 @@ jobs:
 
       - name: Exécuter Telechargement.py
         run: |
-          python code/DataTraitements/Telechargement.py
+          python code/DataProcessing/Telechargement.py
 
 
       - name: Exécuter mapecocercle
