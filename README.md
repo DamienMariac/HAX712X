@@ -7,7 +7,7 @@ Le projet BikeMap pour objectif d’analyser les flux cyclistes dans la ville à
 Les résultats de cette analyse seront présentés sur un site web interactif permettant aux utilisateurs d'avoir des infromations sur le trafic sur des jours donnés. Grâce à une carte prédictive, ils pourront planifier leurs trajets en fonction de l’intensité du trafic prévu.
 
 ## Site web
-Vous pouvez consulter le site web du projet ici : [BikeMap](https://damienmariac.github.io/HAX712X/index)
+Vous pouvez consulter le site web du projet ici : [BikeMap](https://damienmariac.github.io/HAX712X)
 
 ## Guide d'installation 
 
