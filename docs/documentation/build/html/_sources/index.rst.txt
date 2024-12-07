@@ -11,6 +11,8 @@ Dans cette documentation, vous trouverez des informations détaillées sur les m
    :maxdepth: 2
    :caption: Sommaire :
 
+   guide
    classe
    package
    fonction
+   credits

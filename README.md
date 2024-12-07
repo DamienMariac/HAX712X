@@ -25,21 +25,19 @@ cd HAX712X
 ```
 #### 3. Installation des packages nécessaires : 
 
-Remarque : Nous vous conseillons de créer un environnement virtuel (avec Conda ou virtual-env par exemple) afin de garder un contrôle simple sur les dépendances installées. 
+**Remarque** : Nous vous conseillons de créer un environnement virtuel (avec Conda ou virtual-env par exemple) afin de garder un contrôle simple sur les dépendances installées. 
+
 Voici un exemple de la procédure à suivre avec conda : 
 
 ``` python
 conda create --name bike-map-env python=3.12
 conda activate bike-map-env
 ```
-Enfin vous pouvez installer les packages avec la commande suivante : 
+Enfin vous pouvez installer les packages nécessaires avec la commande suivante : 
+
 ``` python
 pip install -r requirements.txt
 ```
-
-## Documentation 
-
-La documentation du projet peut être consultée à l'adresse suivante : [Documentation Sphinx](documentation/build/index.html)
 
 ## Auteurs
 - [Damien Mariac](https://github.com/DamienMariac/)

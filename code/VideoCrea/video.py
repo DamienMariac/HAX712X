@@ -90,5 +90,5 @@ def animate(frame):
 
 compression_ratio = 86400 / 1000  # Compression du temps
 ani = FuncAnimation(fig, animate, frames=60, interval=1000 / 20, blit=True)
-ani.save('Video/montpelliervelo0901.gif', writer='pillow', fps=30)
+ani.save('../Video/montpelliervelo0901.gif', writer='pillow', fps=30)
 plt.show()
