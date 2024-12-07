@@ -8,6 +8,8 @@ project:
 
 resources:
   - "docs/build/html/**"
+  - Video
+  - map
 
 
 
