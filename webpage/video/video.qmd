@@ -7,7 +7,7 @@ execute:
 
 Découvrez en vidéo une représentation du trafic cycliste à Montpellier pour la date du 01/09/2024 ! Cette animation met en lumière les flux de circulation des vélos au fil de la journée, en s’appuyant sur les données réelles collectées dans la métropole.
 
-![](../../code/VideoCrea/montpelliervelo0901.gif)
+![](../../Video/montpelliervelo0901.gif)
 
 
 <!-- Conteneur pour l'animation -->
