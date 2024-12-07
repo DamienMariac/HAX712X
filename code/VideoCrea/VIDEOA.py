@@ -115,7 +115,7 @@ driver.quit()
 
 # Convertir les captures en vidéo MP4
 frame_rate = 10  # Images par seconde
-video_path = 'C:/Users/Abkat/Downloads/video.mp4'
+video_path = 'code/VideoCrea'
 
 # Générer la vidéo à partir des images
 clip = ImageSequenceClip(frames, fps=frame_rate)
