@@ -32,7 +32,7 @@ traffic_gdf = gpd.GeoDataFrame(
 )
 
 # Charger les routes depuis un fichier GeoJSON
-routes_gdf = gpd.read_file('data/export.geojson')
+routes_gdf = gpd.read_file('https://drive.google.com/uc?id=1qy3LPau5A7AfbSY1c1BJHGYPnhgeoFBe') #lien vers export.geojson
 routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
 
 # Effectuer une jointure spatiale
@@ -83,6 +83,22 @@ for _, row in joined_gdf.iterrows():
             color=get_color(row['intensity']),
             weight=5
         ).add_to(map)
+
+legend_html = '''
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 200px; height: 200px; 
+                background-color: white; border: 2px solid black; z-index: 9999; font-size: 14px; 
+                padding: 10px;">
+        <strong>Intensité des éco-compteurs</strong><br>
+        <i style="background: darkred; width: 20px; height: 20px; display: inline-block;"></i> > 2000<br>
+        <i style="background: red; width: 20px; height: 20px; display: inline-block;"></i> 1000 - 2000<br>
+        <i style="background: darkorange; width: 20px; height: 20px; display: inline-block;"></i> 500 - 1000<br>
+        <i style="background: gold; width: 20px; height: 20px; display: inline-block;"></i> 250 - 500<br>
+        <i style="background: green; width: 20px; height: 20px; display: inline-block;"></i> <= 250
+    </div>
+'''
+
+map.get_root().html.add_child(folium.Element(legend_html))
 
 # Sauvegarder la carte
 output_dir = 'map'

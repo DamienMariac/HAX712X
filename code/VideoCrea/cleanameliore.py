@@ -1,7 +1,7 @@
 #%%
 import pandas as pd
 
-df = pd.read_csv('video/velomagg.csv')
+df = pd.read_csv('https://drive.google.com/uc?id=1q2hclEfeGOQhxFHqoz9yN_QLh6vL6dJu') #lien vers velomagg.csv
 
 colonnes_a_garder = ['Departure', 'Return', 'Departure station', 'Return station', 'Covered distance (m)', 'Duration (sec.)']
 df_reduit = df[colonnes_a_garder]
@@ -19,6 +19,6 @@ for colonne in colonnes:
 
 df_reduit = df_reduit[(df_reduit['Covered distance (m)'] > 0) & (df_reduit['Duration (sec.)'] >= 25)]
 
-df_reduit.to_csv('video/velomagg2.csv')
+df_reduit.to_csv('data/velomagg2.csv')
 
 # %%

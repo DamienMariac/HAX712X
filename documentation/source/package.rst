@@ -46,6 +46,10 @@ Packages pour le web et l'interaction
 
   Cette bibliothèque envoie des requêtes HTTP et est utilisée pour interagir avec des API ou récupérer des données sur le web.
 
+- **selenium** 
+
+  Cette bibliothèque automatise la navigation sur des sites web. Elle permet de simuler des actions utilisateur comme le clic ou la saisie de texte par exemple.
+
 Packages pour la visualisation
 ------------------------------
 

@@ -7,20 +7,7 @@ project:
     - webpage/video/video.qmd
 
 resources:
-  - map/ecoCompteurRoutes.html
-  - map/ecoCompteurCercle.html
-  - map/monday_map.html
-  - map/tuesday_map.html
-  - map/wednesday_map.html
-  - map/thursday_map.html
-  - map/friday_map.html
-  - map/saturday_map.html
-  - map/sunday_map.html
-  - documentation/build/html/_static/** ##
-  - documentation/build/html/_static/**  ## Je ne sais pas si c'est necessaire
-  - documentation/build/html/_sources/** ##
-  - documentation/build/html/fonction.html
-  - documentation/build/html/package.html
+  - "docs/build/html/**"
 
 
 
@@ -56,5 +43,5 @@ format:
     format : solar
     css: style.css
 
-scripts:
-  - !expr cp -r build/html/* docs/
+#scripts:
+  #- !expr cp -r build/html/* docs/
