@@ -70,12 +70,14 @@ def animate(frame):
     Anime le mouvement des points au fil du temps en fonction de leurs heures de début et de fin.
 
     Args :
-        frame (int) : Le numéro de la frame de l'animation. Cette valeur est utilisée pour calculer
-                  l'heure actuelle de l'animation et déterminer l'avancement de chaque point.
+        frame (int) : 
+
+        Le numéro de la frame de l'animation. Cette valeur est utilisée pour calculer l'heure actuelle de l'animation et déterminer l'avancement de chaque point.
 
     Return :
-        list : Une liste des points qui sont mis à jour pendant l'animation,
-           où chaque point est représenté par un objet de tracé matplotlib.
+        list : 
+        
+        Une liste des points qui sont mis à jour pendant l'animation, où chaque point est représenté par un objet de tracé matplotlib.
     """
     current_time = frame * compression_ratio
     for p in points:

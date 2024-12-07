@@ -8,8 +8,9 @@ Guide d'installation du projet
    - Git
 
    - Quarto
-   
+
    - Anaconda (optionnel)
+
 
 2. **Clonage du dépôt GitHub :**
 
@@ -19,6 +20,7 @@ Guide d'installation du projet
 
       git clone https://github.com/DamienMariac/HAX712X.git
       cd HAX712X
+      
 
 3. **Installation des packages nécessaires :**
 
