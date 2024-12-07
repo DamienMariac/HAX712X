@@ -7,6 +7,7 @@ project:
     - webpage/video/video.qmd
 
 resources:
+  - .nojekyll
   - Video
   - map
   - documentation
