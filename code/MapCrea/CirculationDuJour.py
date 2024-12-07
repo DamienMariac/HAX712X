@@ -3,14 +3,17 @@ import folium
 import json
 from shapely.geometry import Point
 import os
+import requests
 
-# Chemin vers les données de trafic
-traffic_data_path = 'data/concatenated_data.jsonl'
+google_drive_url = 'https://drive.google.com/uc?id=1ZcOKTdqVQDGkDIb4GICtQkb3dfGfQDZq'
 
-# Charger les données de trafic
-traffic_data = []
-with open(traffic_data_path, 'r') as file:
-    for line in file:
+# Télécharger le fichier à partir de Google Drive
+response = requests.get(google_drive_url)
+if response.status_code == 200:
+    print(f"Fichier téléchargé avec succès depuis Google Drive.")
+    # Charger les données directement depuis le contenu du fichier téléchargé
+    traffic_data = []
+    for line in response.text.splitlines():
         traffic_data.append(json.loads(line.strip()))
 
 # Valider les données pour s'assurer que les coordonnées sont valides

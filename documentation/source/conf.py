@@ -9,7 +9,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('../code'))
+sys.path.insert(0, os.path.abspath('../../code'))
 print("sys.path:", sys.path)
 
 project = 'BikeMap'
@@ -25,7 +25,7 @@ extensions = [
 
 templates_path = ['_templates']
 exclude_patterns = []
-#html_static_path = ['_static']
+html_static_path = ['_static']
 html_baseurl = "https://damienmariac.github.io/HAX712X/"
 language = 'fr'
 
