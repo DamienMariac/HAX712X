@@ -7,9 +7,9 @@ project:
     - webpage/video/video.qmd
 
 resources:
-  - "docs/build/html/**"
   - Video
   - map
+  - documentation
 
 
 
