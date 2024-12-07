@@ -1,7 +1,7 @@
-Fonctions 
-=========
+Autres fonctions 
+================
 
-.. autofunction:: VideoCrea.video.animate
+.. automodule:: VideoCrea.video
    :members:
    :undoc-members:
    :show-inheritance:

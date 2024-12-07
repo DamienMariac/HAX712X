@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fonctions &mdash; Documentation BikeMap 1.0</title>
+  <title>Autres fonctions &mdash; Documentation BikeMap 1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -21,6 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Crédits" href="credits.html" />
     <link rel="prev" title="Packages" href="package.html" /> 
 </head>
 
@@ -45,9 +46,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Guide d’installation du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="classe.html">Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Packages</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Fonctions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Autres fonctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.animate"><code class="docutils literal notranslate"><span class="pre">animate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Crédits</a></li>
 </ul>
 
         </div>
@@ -64,7 +70,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Fonctions</li>
+      <li class="breadcrumb-item active">Autres fonctions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/fonction.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -74,8 +80,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="fonctions">
-<h1>Fonctions<a class="headerlink" href="#fonctions" title="Lien vers cette rubrique"></a></h1>
+  <section id="module-VideoCrea.video">
+<span id="autres-fonctions"></span><h1>Autres fonctions<a class="headerlink" href="#module-VideoCrea.video" title="Lien vers cette rubrique"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.animate">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#animate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.animate" title="Lien vers cette définition"></a></dt>
+<dd><p>Anime le mouvement des points au fil du temps en fonction de leurs heures de début et de fin.</p>
+<dl class="simple">
+<dt>Args :</dt><dd><dl class="simple">
+<dt>frame (int)<span class="classifier">Le numéro de la frame de l’animation. Cette valeur est utilisée pour calculer</span></dt><dd><p>l’heure actuelle de l’animation et déterminer l’avancement de chaque point.</p>
+</dd>
+</dl>
+</dd>
+<dt>Return :</dt><dd><dl class="simple">
+<dt>list<span class="classifier">Une liste des points qui sont mis à jour pendant l’animation,</span></dt><dd><p>où chaque point est représenté par un objet de tracé matplotlib.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -83,6 +107,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="package.html" class="btn btn-neutral float-left" title="Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="credits.html" class="btn btn-neutral float-right" title="Crédits" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
