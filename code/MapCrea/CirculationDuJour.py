@@ -32,7 +32,7 @@ traffic_gdf = gpd.GeoDataFrame(
 )
 
 # Charger les routes depuis un fichier GeoJSON
-routes_gdf = gpd.read_file('data/export.geojson')
+routes_gdf = gpd.read_file('https://drive.google.com/uc?id=1qy3LPau5A7AfbSY1c1BJHGYPnhgeoFBe') #lien vers export.geojson
 routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
 
 # Effectuer une jointure spatiale

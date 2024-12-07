@@ -6,9 +6,9 @@ from matplotlib.animation import FuncAnimation
 from datetime import datetime
 
 # Chargement des données de trajets
-trajets_df = pd.read_csv('data/fusion.csv')
+trajets_df = pd.read_csv('https://drive.google.com/uc?id=1ItR7BfdJsxUN1wakCtLic6_uaYqD5eVE') #lien vers fusion.csv
 
-# Filtrer les trajets du 1er janvier 2024
+# Filtrer les trajets du 5 septembre 2024
 date = '2024-09-05'
 course = trajets_df[trajets_df['Departure'].str.contains(date)]
 course = course.dropna(subset=['latitude_depart', 'longitude_depart', 'latitude_arrivee', 'longitude_arrivee'])
@@ -90,5 +90,5 @@ def animate(frame):
 
 compression_ratio = 86400 / 1000  # Compression du temps
 ani = FuncAnimation(fig, animate, frames=60, interval=1000 / 20, blit=True)
-ani.save('video/montpelliervelo0901.gif', writer='pillow', fps=30)
+ani.save('Video/montpelliervelo0901.gif', writer='pillow', fps=30)
 plt.show()

@@ -6,24 +6,24 @@ import shapely
 from CirculationDuJour import get_color
 
 
-data = pd.read_csv('../data/all_archive.csv', delimiter=';')
+data = pd.read_csv('https://drive.google.com/uc?id=1jH-56gBcZc41KZdH5Dwrj7dB1nRWTdI7', delimiter=';') #lien vers all_archives.csv
 
 data['coordinates'] = list(zip(data['longitude'], data['latitude']))
 data['date'] = pd.to_datetime(data['date'].str.split('/').str[0])
 data['day_of_week'] = data['date'].dt.day_name()
 
 # Calculer la moyenne de l'intensité par jour de la semaine et par coordonnées
-trafique_moy = data.groupby(['day_of_week', 'coordinates']).agg({
+traffic_moy = data.groupby(['day_of_week', 'coordinates']).agg({
     'intensity': 'mean'
 }).reset_index()
 
-routes_gdf = gpd.read_file('../data/export.geojson')
+routes_gdf = gpd.read_file('https://drive.google.com/uc?id=1qy3LPau5A7AfbSY1c1BJHGYPnhgeoFBe') #lien vers export.geojson
 routes_gdf = routes_gdf.to_crs("EPSG:4326")
 
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 for day in days:
 
-    day_data = trafique_moy[trafique_moy['day_of_week'] == day]   # De Lundi à Dimanche
+    day_data = traffic_moy[traffic_moy['day_of_week'] == day]   # De Lundi à Dimanche
 
     traffic_gdf = gpd.GeoDataFrame(
         day_data,

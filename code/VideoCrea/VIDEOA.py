@@ -14,7 +14,7 @@ from moviepy.editor import ImageSequenceClip
 CHROMEDRIVER_PATH = 'C:/Users/Abkat/Downloads/chromedriver_win32/chromedriver.exe'
 
 # Chargement des données de trajets
-trajets_df = pd.read_csv('C:/Users/Abkat/Downloads/fusion.csv')
+trajets_df = pd.read_csv('https://drive.google.com/uc?id=1ItR7BfdJsxUN1wakCtLic6_uaYqD5eVE') #lien vers fusion.csv
 
 # Filtrer les trajets du 5 septembre 2024
 date = '2024-09-05'
