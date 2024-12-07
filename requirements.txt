@@ -13,3 +13,7 @@ requests
 sphinx
 sphinx_rtd_theme
 selenium
+memory-profiler
+date-time
+time
+subprocess
