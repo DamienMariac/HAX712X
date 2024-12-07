@@ -4,8 +4,9 @@ import json
 from shapely.geometry import Point
 import os
 import requests
+from memory_profiler import profile
 
-google_drive_url = 'https://drive.google.com/uc?id=1ZcOKTdqVQDGkDIb4GICtQkb3dfGfQDZq'
+google_drive_url = 'https://drive.google.com/uc?id=1ZcOKTdqVQDGkDIb4GICtQkb3dfGfQDZq'  # Lien vers concatenated_data.jsonl
 
 # Télécharger le fichier à partir de Google Drive
 response = requests.get(google_drive_url)
@@ -27,23 +28,36 @@ valid_traffic_data = [
     and item['location']['coordinates'][1] is not None
 ]
 
-# Création du GeoDataFrame
-traffic_gdf = gpd.GeoDataFrame(
-    valid_traffic_data,
-    geometry=[Point(data['location']['coordinates']) for data in valid_traffic_data],
-    crs="EPSG:4326"
-)
+@profile
+def process_traffic_data():
+    """
+    Traite les données de trafic et crée un GeoDataFrame.
+    """
+    traffic_gdf = gpd.GeoDataFrame(
+        valid_traffic_data,
+        geometry=[Point(data['location']['coordinates']) for data in valid_traffic_data],
+        crs="EPSG:4326"
+    )
+    return traffic_gdf
 
-# Charger les routes depuis un fichier GeoJSON
-routes_gdf = gpd.read_file('https://drive.google.com/uc?id=1qy3LPau5A7AfbSY1c1BJHGYPnhgeoFBe') #lien vers export.geojson
-routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
-
-# Effectuer une jointure spatiale
-joined_gdf = gpd.sjoin_nearest(routes_gdf, traffic_gdf, how="inner", max_distance=100)
+@profile
+def join_routes_to_traffic(traffic_gdf):
+    """
+    Effectue une jointure spatiale entre les données de trafic et les routes.
+    """
+    routes_gdf = gpd.read_file('https://drive.google.com/uc?id=1qy3LPau5A7AfbSY1c1BJHGYPnhgeoFBe')  # Lien vers export.geojson
+    routes_gdf = routes_gdf.to_crs(traffic_gdf.crs)
+    
+    # Effectuer une jointure spatiale
+    joined_gdf = gpd.sjoin_nearest(routes_gdf, traffic_gdf, how="inner", max_distance=100)
+    
+    # Ajouter un print pour vérifier si la jointure a réussi
+    print(f"joined_gdf contient {len(joined_gdf)} lignes.")
+    
+    return joined_gdf
 
 # Fonction pour déterminer la couleur en fonction de l'intensité
 def get_color(intensity):
-
     """
     Détermine une couleur en fonction de l'intensité donnée.
 
@@ -74,36 +88,51 @@ def get_color(intensity):
     else:
         return 'green'
 
-# Création de la carte
-map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)
+def main():
+    # Traiter les données de trafic et créer le GeoDataFrame
+    traffic_gdf = process_traffic_data()
+    
+    # Effectuer la jointure spatiale entre les routes et les données de trafic
+    joined_gdf = join_routes_to_traffic(traffic_gdf)
+    
+    # Vérifier si joined_gdf est bien défini
+    if joined_gdf is None or len(joined_gdf) == 0:
+        print("Erreur : La jointure spatiale a échoué ou aucun résultat n'a été trouvé.")
+        return  # Sortir de la fonction main si joined_gdf est vide ou non défini
+    
+    # Création de la carte
+    map = folium.Map(location=[43.610769, 3.876716], zoom_start=13)
 
-# Ajout des routes à la carte avec la couleur correspondant à l'intensité
-for _, row in joined_gdf.iterrows():
-    if row.geometry and row.geometry.geom_type == 'LineString':
-        coords = [[p[1], p[0]] for p in row.geometry.coords]
-        folium.PolyLine(
-            locations=coords,
-            color=get_color(row['intensity']),
-            weight=5
-        ).add_to(map)
+    # Ajout des routes à la carte avec la couleur correspondant à l'intensité
+    for _, row in joined_gdf.iterrows():
+        if row.geometry and row.geometry.geom_type == 'LineString':
+            coords = [[p[1], p[0]] for p in row.geometry.coords]
+            folium.PolyLine(
+                locations=coords,
+                color=get_color(row['intensity']),
+                weight=5
+            ).add_to(map)
 
-legend_html = '''
-    <div style="position: fixed; 
-                bottom: 50px; left: 50px; width: 200px; height: 200px; 
-                background-color: white; border: 2px solid black; z-index: 9999; font-size: 14px; 
-                padding: 10px;">
-        <strong>Intensité des éco-compteurs</strong><br>
-        <i style="background: darkred; width: 20px; height: 20px; display: inline-block;"></i> > 2000<br>
-        <i style="background: red; width: 20px; height: 20px; display: inline-block;"></i> 1000 - 2000<br>
-        <i style="background: darkorange; width: 20px; height: 20px; display: inline-block;"></i> 500 - 1000<br>
-        <i style="background: gold; width: 20px; height: 20px; display: inline-block;"></i> 250 - 500<br>
-        <i style="background: green; width: 20px; height: 20px; display: inline-block;"></i> <= 250
-    </div>
-'''
+    # Ajouter la légende
+    legend_html = '''
+        <div style="position: fixed; 
+                    bottom: 50px; left: 50px; width: 200px; height: 200px; 
+                    background-color: white; border: 2px solid black; z-index: 9999; font-size: 14px; 
+                    padding: 10px;">
+            <strong>Intensité des éco-compteurs</strong><br>
+            <i style="background: darkred; width: 20px; height: 20px; display: inline-block;"></i> > 2000<br>
+            <i style="background: red; width: 20px; height: 20px; display: inline-block;"></i> 1000 - 2000<br>
+            <i style="background: darkorange; width: 20px; height: 20px; display: inline-block;"></i> 500 - 1000<br>
+            <i style="background: gold; width: 20px; height: 20px; display: inline-block;"></i> 250 - 500<br>
+            <i style="background: green; width: 20px; height: 20px; display: inline-block;"></i> <= 250
+        </div>
+    '''
+    map.get_root().html.add_child(folium.Element(legend_html))
 
-map.get_root().html.add_child(folium.Element(legend_html))
+    # Sauvegarder la carte
+    output_dir = 'map'
+    os.makedirs(output_dir, exist_ok=True)
+    map.save(os.path.join(output_dir, 'ecoCompteurRoutes.html'))
 
-# Sauvegarder la carte
-output_dir = 'map'
-os.makedirs(output_dir, exist_ok=True)
-map.save(os.path.join(output_dir, 'ecoCompteurRoutes.html'))
+if __name__ == '__main__':
+    main()

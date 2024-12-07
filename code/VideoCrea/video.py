@@ -4,6 +4,9 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from datetime import datetime
+import time
+from memory_profiler import profile
+
 
 # Chargement des données de trajets
 trajets_df = pd.read_csv('https://drive.google.com/uc?id=1ItR7BfdJsxUN1wakCtLic6_uaYqD5eVE') #lien vers fusion.csv
@@ -64,33 +67,38 @@ for idx, trajet in course.iterrows():
         print(f"Erreur pour le trajet {idx} : {e}")
         continue
 
-# Fonction d'animation mise à jour
+compression_ratio = 86400 / 1000  # Compression du temps
+
+@profile
 def animate(frame):
     """
     Anime le mouvement des points au fil du temps en fonction de leurs heures de début et de fin.
 
     Args :
-        frame (int) : 
+        frame (int) : Le numéro de la frame de l'animation.
 
-        Le numéro de la frame de l'animation. Cette valeur est utilisée pour calculer l'heure actuelle de l'animation et déterminer l'avancement de chaque point.
-
-    Return :
-        list : 
-        
-        Une liste des points qui sont mis à jour pendant l'animation, où chaque point est représenté par un objet de tracé matplotlib.
+    Returns :
+        list : Une liste des points mis à jour pendant l'animation.
     """
+
+    start_time = time.time()  # Début de la mesure de temps
+
     current_time = frame * compression_ratio
     for p in points:
         if p['start_time'] <= current_time <= p['end_time']:
             progress = (current_time - p['start_time']) / p['duration']
             index = int(progress * (len(p['x']) - 1))
-            p['point'].set_data([p['x'][index]], [p['y'][index]])  # Mise en séquence des coordonnées
+            p['point'].set_data([p['x'][index]], [p['y'][index]])  
         else:
             p['point'].set_data([], [])
 
+    elapsed_time = time.time() - start_time  # Temps écoulé
+    print(f"Frame {frame} : Temps d'exécution = {elapsed_time:.6f} secondes")
+
     return [p['point'] for p in points]
 
-compression_ratio = 86400 / 1000  # Compression du temps
+
 ani = FuncAnimation(fig, animate, frames=60, interval=1000 / 20, blit=True)
-ani.save('../Video/montpelliervelo0901.gif', writer='pillow', fps=30)
+ani.save('../../Video/montpelliervelo0901.gif', writer='pillow', fps=30)
 plt.show()
+
