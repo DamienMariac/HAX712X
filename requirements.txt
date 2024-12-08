@@ -9,7 +9,6 @@ moviepy==1.0.3
 osmnx==1.9.4
 panel==1.5.4
 requests==2.32.3
-requests
 sphinx
 sphinx_rtd_theme
 selenium
