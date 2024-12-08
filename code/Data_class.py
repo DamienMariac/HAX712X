@@ -37,7 +37,7 @@ class Data:
 
         try:
             response = requests.get(fichier_url)
-            response.raise_for_status()  # Vérifie que la réponse est OK (status code 200)
+            response.raise_for_status()
             return response.content
         except requests.exceptions.RequestException as e:
             print(f"Erreur lors du téléchargement de {fichier_id}: {e}")

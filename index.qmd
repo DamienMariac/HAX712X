@@ -64,6 +64,6 @@ Cette carte vous donne la localisation des stations VéloMagg avec leur nom, leu
 
 Les données proviennent du site de la Tam de Montpellier accessible aux adresses suivantes :
 
-https://data.montpellier3m.fr/dataset/courses-des-velos-velomagg-de-montpellier-mediterranee-metropole
+[Les données velomagg](https://data.montpellier3m.fr/dataset/courses-des-velos-velomagg-de-montpellier-mediterranee-metropole)
 
-https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo
+[Les eco-compteurs](https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-compteurs-de-velo)

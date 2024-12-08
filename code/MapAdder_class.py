@@ -4,7 +4,7 @@ import geopandas as gpd
 from shapely.geometry import Point
 import json
 import os
-from MapCrea.CirculationDuJour import get_color  # Assurez-vous que la fonction 'get_color' est correctement importée
+from MapCrea.CirculationDuJour import get_color 
 
 class MapAdder : 
     def __init__(self, map_center=[43.610769, 3.876716], zoom_start=13):
