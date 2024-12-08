@@ -1,11 +1,17 @@
 import json
 import folium
+import requests
 
-# Charger les données JSON Lines
-data = []
-with open('https://drive.google.com/uc?id=1ZcOKTdqVQDGkDIb4GICtQkb3dfGfQDZq', 'r') as file: #lien vers concatenated_data.jsonl
-    for line in file:
-        data.append(json.loads(line.strip()))
+# URL du fichier sur Google Drive
+url = 'https://drive.google.com/uc?id=1ZcOKTdqVQDGkDIb4GICtQkb3dfGfQDZq'
+
+# Récupération des données JSON Lines via requests
+response = requests.get(url)
+if response.status_code != 200:
+    print("Échec de la récupération des données :", response.status_code)
+    exit()
+
+data = [json.loads(line.strip()) for line in response.text.splitlines()]
 
 # Créer la carte Folium
 mapM = folium.Map(location=[43.6117, 3.8772], zoom_start=12)
