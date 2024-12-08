@@ -12,11 +12,6 @@ Découvrez en vidéo une représentation du trafic cycliste à Montpellier pour 
   <source src="../../Video/video.mp4" type="video/mp4">
 </video>
 
-Voici une deuxième vidéo au format GIF, cette fois avec un fond différent, offrant une nouvelle perspective sur la présentation.
-
-![](../../Video/montpelliervelo0901.gif)
-
-
 <!-- Conteneur pour l'animation -->
 <div id="bike-animation">
   <img src="../bike.png" alt="Vélo" style="width: 100%;">
