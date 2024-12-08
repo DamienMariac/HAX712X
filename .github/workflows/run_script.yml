@@ -3,7 +3,7 @@ name: Exécuter plusieurs scripts Python
 on:
 
   schedule:
-    - cron: "* 10 * * *" # midi
+    - cron: "*/10 * * * *" 
 
 
   workflow_dispatch:

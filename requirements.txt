@@ -14,6 +14,6 @@ sphinx
 sphinx_rtd_theme
 selenium
 memory-profiler
-date-time
+datetime
 time
 subprocess
