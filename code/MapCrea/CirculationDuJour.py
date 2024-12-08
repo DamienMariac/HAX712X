@@ -4,7 +4,6 @@ import json
 from shapely.geometry import Point
 import os
 import requests
-from memory_profiler import profile
 
 google_drive_url = 'https://drive.google.com/uc?id=1ZcOKTdqVQDGkDIb4GICtQkb3dfGfQDZq'  # Lien vers concatenated_data.jsonl
 
@@ -28,7 +27,7 @@ valid_traffic_data = [
     and item['location']['coordinates'][1] is not None
 ]
 
-@profile
+
 def process_traffic_data():
     """
     Traite les données de trafic et crée un GeoDataFrame.
@@ -40,7 +39,7 @@ def process_traffic_data():
     )
     return traffic_gdf
 
-@profile
+
 def join_routes_to_traffic(traffic_gdf):
     """
     Effectue une jointure spatiale entre les données de trafic et les routes.
