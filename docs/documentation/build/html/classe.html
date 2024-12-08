@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes &mdash; Documentation BikeMap 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="canonical" href="https://damienmariac.github.io/HAX712X/classe.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Packages" href="package.html" />
+    <link rel="prev" title="Guide d’installation du projet" href="guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            BikeMap
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="guide.html">Guide d’installation du projet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Data_class.Data"><code class="docutils literal notranslate"><span class="pre">Data</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Data_class.Data.telechargement_bd_drive"><code class="docutils literal notranslate"><span class="pre">Data.telechargement_bd_drive()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Data_class.Data.charger_fichier"><code class="docutils literal notranslate"><span class="pre">Data.charger_fichier()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Data_class.Data.fusionner_fichiers"><code class="docutils literal notranslate"><span class="pre">Data.fusionner_fichiers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Data_class.Data.sauvegarder_csv"><code class="docutils literal notranslate"><span class="pre">Data.sauvegarder_csv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Data_class.Data.executer"><code class="docutils literal notranslate"><span class="pre">Data.executer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#MapAdder_class.MapAdder"><code class="docutils literal notranslate"><span class="pre">MapAdder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#MapAdder_class.MapAdder.add_station_markers"><code class="docutils literal notranslate"><span class="pre">MapAdder.add_station_markers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MapAdder_class.MapAdder.save_station_map"><code class="docutils literal notranslate"><span class="pre">MapAdder.save_station_map()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MapAdder_class.MapAdder.add_ecocompteur_circles"><code class="docutils literal notranslate"><span class="pre">MapAdder.add_ecocompteur_circles()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MapAdder_class.MapAdder.execute"><code class="docutils literal notranslate"><span class="pre">MapAdder.execute()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="package.html">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fonction.html">Autres fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Crédits</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BikeMap</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/classe.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Lien vers cette rubrique"></a></h1>
+<p>Classe pour le traitement des données.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Data_class.Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Data_class.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fichiers_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_fichier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'output.csv'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data_class.html#Data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data_class.Data" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe de traitement des données. Permet de télécharger, fusionner et sauvegarder des fichiers de données (CSV, JSON, GeoJSON)
+depuis Google Drive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fichiers_ids</strong> – Dictionnaire des ID de fichiers Google Drive, où la clé est le nom du fichier et la valeur est l’ID Google Drive.</p></li>
+<li><p><strong>output_fichier</strong> – Nom du fichier de sortie pour les données fusionnées. Par défaut « output.csv ».</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Data_class.Data.telechargement_bd_drive">
+<span class="sig-name descname"><span class="pre">telechargement_bd_drive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fichier_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data_class.html#Data.telechargement_bd_drive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data_class.Data.telechargement_bd_drive" title="Lien vers cette définition"></a></dt>
+<dd><p>Télécharge un fichier depuis Google Drive en utilisant son ID et le charge directement en mémoire.
+La méthode détecte le type de fichier (CSV, JSON, GEOJSON) et le charge en conséquence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fichier_id</strong> – L’ID du fichier à télécharger depuis Google Drive.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Le contenu du fichier téléchargé sous forme binaire.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data_class.Data.charger_fichier">
+<span class="sig-name descname"><span class="pre">charger_fichier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fichier_content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fichier_nom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data_class.html#Data.charger_fichier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data_class.Data.charger_fichier" title="Lien vers cette définition"></a></dt>
+<dd><p>Charge un fichier en DataFrame ou GeoDataFrame en fonction du type de fichier.
+Les fichiers sont traités en mémoire sans être enregistrés localement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fichier_content</strong> – Le contenu du fichier téléchargé (binaire).</p></li>
+<li><p><strong>fichier_nom</strong> – Le nom du fichier, utilisé pour déterminer son type (CSV, JSON, GeoJSON).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Un DataFrame ou GeoDataFrame si le fichier est valide, sinon None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data_class.Data.fusionner_fichiers">
+<span class="sig-name descname"><span class="pre">fusionner_fichiers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data_class.html#Data.fusionner_fichiers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data_class.Data.fusionner_fichiers" title="Lien vers cette définition"></a></dt>
+<dd><p>Fusionne tous les fichiers téléchargés depuis Google Drive en un seul DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Un DataFrame fusionné de tous les fichiers téléchargés, ou None si aucun fichier valide.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data_class.Data.sauvegarder_csv">
+<span class="sig-name descname"><span class="pre">sauvegarder_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data_class.html#Data.sauvegarder_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data_class.Data.sauvegarder_csv" title="Lien vers cette définition"></a></dt>
+<dd><p>Sauvegarde le DataFrame fusionné dans un fichier CSV localement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>df</strong> – Le DataFrame fusionné à sauvegarder.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Data_class.Data.executer">
+<span class="sig-name descname"><span class="pre">executer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Data_class.html#Data.executer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Data_class.Data.executer" title="Lien vers cette définition"></a></dt>
+<dd><p>Cette méthode coordonne l’exécution de toutes les actions de traitement des données.</p>
+<p>Elle télécharge, fusionne et sauvegarde les fichiers traités en un seul CSV.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MapAdder_class.MapAdder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MapAdder_class.</span></span><span class="sig-name descname"><span class="pre">MapAdder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[43.610769,</span> <span class="pre">3.876716]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">13</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapAdder_class.html#MapAdder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapAdder_class.MapAdder" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="MapAdder_class.MapAdder.add_station_markers">
+<span class="sig-name descname"><span class="pre">add_station_markers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapAdder_class.html#MapAdder.add_station_markers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapAdder_class.MapAdder.add_station_markers" title="Lien vers cette définition"></a></dt>
+<dd><p>Ajoute des marqueurs pour les stations VéloMagg à partir d’un fichier CSV.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>csv_url</strong> (<em>str</em>) – URL du fichier CSV contenant les données des stations (latitude, longitude, etc.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MapAdder_class.MapAdder.save_station_map">
+<span class="sig-name descname"><span class="pre">save_station_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bikestation_map.html'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapAdder_class.html#MapAdder.save_station_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapAdder_class.MapAdder.save_station_map" title="Lien vers cette définition"></a></dt>
+<dd><p>Sauvegarde la carte des stations VéloMagg.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_name</strong> (<em>str</em>) – Nom du fichier HTML de sortie pour la carte des stations.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MapAdder_class.MapAdder.add_ecocompteur_circles">
+<span class="sig-name descname"><span class="pre">add_ecocompteur_circles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jsonl_file</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapAdder_class.html#MapAdder.add_ecocompteur_circles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapAdder_class.MapAdder.add_ecocompteur_circles" title="Lien vers cette définition"></a></dt>
+<dd><p>Ajoute des cercles représentant les intensités des éco-compteurs à partir d’un fichier JSONL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jsonl_file</strong> (<em>str</em>) – Chemin vers le fichier JSON Lines contenant les données des éco-compteurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MapAdder_class.MapAdder.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsonl_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station_map_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bikestation_map.html'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eco_map_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ecoCompteurCercle.html'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapAdder_class.html#MapAdder.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapAdder_class.MapAdder.execute" title="Lien vers cette définition"></a></dt>
+<dd><p>Méthode pour exécuter l’ensemble des actions :
+1. Ajouter des marqueurs de stations.
+2. Ajouter des cercles des éco-compteurs.
+3. Sauvegarder les cartes.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="guide.html" class="btn btn-neutral float-left" title="Guide d’installation du projet" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="package.html" class="btn btn-neutral float-right" title="Packages" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Damien Mariac, Abdoul-El Sawadogo, Julien Ollier, Marine Germain.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
