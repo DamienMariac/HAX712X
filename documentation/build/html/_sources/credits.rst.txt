@@ -29,29 +29,29 @@ Ce projet utilise plusieurs ensembles de données pour analyser le trafic cyclis
 Autres ressources
 -----------------
 
-- **GitHub** : Le code source du projet est hébergé sur GitHub.
+1. **GitHub** : Le code source du projet est hébergé sur GitHub.
 
   - Lien : https://github.com/DamienMariac/HAX712X
 
-- **Sphinx** : Outil de génération de documentation, utilisé pour créer cette documentation.
+2. **Sphinx** : Outil de génération de documentation, utilisé pour créer cette documentation.
 
   - Lien : https://www.sphinx-doc.org/
 
   - Licence : BSD License
 
-- **ChatGPT** : Modèle de langage développé par OpenAI, utilisé pour générer des suggestions de code et fourni de l'aide pour le développement.
+3. **ChatGPT** : Modèle de langage développé par OpenAI, utilisé pour générer des suggestions de code et fourni de l'aide pour le développement.
   
   - Lien : https://openai.com/chatgpt
   
   - Licence : OpenAI Terms of Service
 
-- **Overpass API** : Un serveur permettant de réaliser des requêtes sur les données géographiques d'OpenStreetMap (OSM). Utilisé dans ce projet pour extraire des données géographiques spécifiques à Montpellier et aux infrastructures cyclables.
+4. **Overpass API** : Un serveur permettant de réaliser des requêtes sur les données géographiques d'OpenStreetMap (OSM). Utilisé dans ce projet pour extraire des données géographiques spécifiques à Montpellier et aux infrastructures cyclables.
   
   - Lien : https://overpass-turbo.eu/
   
   - Licence : Open Database License (ODbL) - OpenStreetMap
 
-- **Stack Overflow** : Une plateforme communautaire de questions-réponses pour les développeurs. Utilisée pour résoudre des problèmes techniques rencontrés durant le développement du projet.
+5. **Stack Overflow** : Une plateforme communautaire de questions-réponses pour les développeurs. Utilisée pour résoudre des problèmes techniques rencontrés durant le développement du projet.
   
   - Lien : https://stackoverflow.com/
   

@@ -15,4 +15,5 @@ Dans cette documentation, vous trouverez des informations détaillées sur les m
    classe
    package
    fonction
+   time
    credits
