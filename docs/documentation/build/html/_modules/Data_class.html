@@ -43,9 +43,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Sommaire :</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide.html">Guide d’installation du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../classe.html">Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../package.html">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../fonction.html">Fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fonction.html">Autres fonctions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Crédits</a></li>
 </ul>
 
         </div>
@@ -116,7 +118,7 @@
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">fichier_url</span><span class="p">)</span>
-            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>  <span class="c1"># Vérifie que la réponse est OK (status code 200)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
         <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur lors du téléchargement de </span><span class="si">{</span><span class="n">fichier_id</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

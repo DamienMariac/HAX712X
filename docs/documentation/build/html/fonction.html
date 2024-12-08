@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Crédits" href="credits.html" />
+    <link rel="next" title="Temps et mémoire" href="time.html" />
     <link rel="prev" title="Packages" href="package.html" /> 
 </head>
 
@@ -50,9 +50,14 @@
 <li class="toctree-l1"><a class="reference internal" href="classe.html">Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Packages</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Autres fonctions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.animate"><code class="docutils literal notranslate"><span class="pre">animate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.process_traffic_data"><code class="docutils literal notranslate"><span class="pre">process_traffic_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.join_routes_to_traffic"><code class="docutils literal notranslate"><span class="pre">join_routes_to_traffic()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.get_color"><code class="docutils literal notranslate"><span class="pre">get_color()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#MapCrea.station_map.add_marker"><code class="docutils literal notranslate"><span class="pre">add_marker()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">Temps et mémoire</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Crédits</a></li>
 </ul>
 
@@ -80,24 +85,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-VideoCrea.video">
-<span id="autres-fonctions"></span><h1>Autres fonctions<a class="headerlink" href="#module-VideoCrea.video" title="Lien vers cette rubrique"></a></h1>
+  <section id="module-MapCrea.CirculationDuJour">
+<span id="autres-fonctions"></span><h1>Autres fonctions<a class="headerlink" href="#module-MapCrea.CirculationDuJour" title="Lien vers cette rubrique"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="VideoCrea.video.animate">
-<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">animate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#animate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.animate" title="Lien vers cette définition"></a></dt>
-<dd><p>Anime le mouvement des points au fil du temps en fonction de leurs heures de début et de fin.</p>
-<dl class="simple">
-<dt>Args :</dt><dd><dl class="simple">
-<dt>frame (int)<span class="classifier">Le numéro de la frame de l’animation. Cette valeur est utilisée pour calculer</span></dt><dd><p>l’heure actuelle de l’animation et déterminer l’avancement de chaque point.</p>
+<dt class="sig sig-object py" id="MapCrea.CirculationDuJour.process_traffic_data">
+<span class="sig-prename descclassname"><span class="pre">MapCrea.CirculationDuJour.</span></span><span class="sig-name descname"><span class="pre">process_traffic_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapCrea/CirculationDuJour.html#process_traffic_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapCrea.CirculationDuJour.process_traffic_data" title="Lien vers cette définition"></a></dt>
+<dd><p>Traite les données de trafic et crée un GeoDataFrame.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MapCrea.CirculationDuJour.join_routes_to_traffic">
+<span class="sig-prename descclassname"><span class="pre">MapCrea.CirculationDuJour.</span></span><span class="sig-name descname"><span class="pre">join_routes_to_traffic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traffic_gdf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapCrea/CirculationDuJour.html#join_routes_to_traffic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapCrea.CirculationDuJour.join_routes_to_traffic" title="Lien vers cette définition"></a></dt>
+<dd><p>Effectue une jointure spatiale entre les données de trafic et les routes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MapCrea.CirculationDuJour.get_color">
+<span class="sig-prename descclassname"><span class="pre">MapCrea.CirculationDuJour.</span></span><span class="sig-name descname"><span class="pre">get_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapCrea/CirculationDuJour.html#get_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapCrea.CirculationDuJour.get_color" title="Lien vers cette définition"></a></dt>
+<dd><p>Détermine une couleur en fonction de l’intensité donnée.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>int</em>) – La valeur numérique représentant l’intensité doit être un entier positif.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Une chaîne de caractères représentant une couleur :</p>
+<ul class="simple">
+<li><p>”darkred” : si l’intensité est supérieure à 2000,</p></li>
+<li><p>”red” : si l’intensité est supérieure à 1000 et inférieur à 2000,</p></li>
+<li><p>”darkorange” : si l’intensité est supérieure à 500 et inférieur à 1000,</p></li>
+<li><p>”gold” : si l’intensité est supérieure à 250 et inférieur à 500,</p></li>
+<li><p>”green” : si l’intensité est inférieure ou égale à 250.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
-</dd>
-<dt>Return :</dt><dd><dl class="simple">
-<dt>list<span class="classifier">Une liste des points qui sont mis à jour pendant l’animation,</span></dt><dd><p>où chaque point est représenté par un objet de tracé matplotlib.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MapCrea.CirculationDuJour.main">
+<span class="sig-prename descclassname"><span class="pre">MapCrea.CirculationDuJour.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapCrea/CirculationDuJour.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapCrea.CirculationDuJour.main" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function" id="module-MapCrea.station_map">
+<dt class="sig sig-object py" id="MapCrea.station_map.add_marker">
+<span class="sig-prename descclassname"><span class="pre">MapCrea.station_map.</span></span><span class="sig-name descname"><span class="pre">add_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapCrea/station_map.html#add_marker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapCrea.station_map.add_marker" title="Lien vers cette définition"></a></dt>
+<dd><p>Ajoute un marqueur sur une carte Folium à partir des données géographiques des stations VéloMagg.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>pandas.Series</em>) – <p>Une ligne d’un DataFrame contenant les informations nécessaires pour créer un marqueur. La ligne doit inclure au moins les colonnes suivantes :</p>
+<ul class="simple">
+<li><p>”latitude” (float) : Latitude de la station.</p></li>
+<li><p>”longitude” (float) : Longitude de la station.</p></li>
+<li><p>”nom” (str) : Nom de la station.</p></li>
+<li><p>”secteur” (str) : Secteur géographique de la station.</p></li>
+<li><p>”type_stati” (str) : Type de station.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
-</dd>
-</dl>
+<p>Note: Cette fonction ne peut être utilisé que si un objet <cite>map</cite> de type <cite>folium.Map</cite> est déjà créé et accessible.</p>
 </dd></dl>
 
 </section>
@@ -107,7 +156,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="package.html" class="btn btn-neutral float-left" title="Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="credits.html" class="btn btn-neutral float-right" title="Crédits" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="time.html" class="btn btn-neutral float-right" title="Temps et mémoire" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
