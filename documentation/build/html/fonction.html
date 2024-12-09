@@ -50,6 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="classe.html">Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="package.html">Packages</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Autres fonctions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.load_data"><code class="docutils literal notranslate"><span class="pre">load_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.create_graph"><code class="docutils literal notranslate"><span class="pre">create_graph()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.process_trajets"><code class="docutils literal notranslate"><span class="pre">process_trajets()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.create_map"><code class="docutils literal notranslate"><span class="pre">create_map()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.capture_frames"><code class="docutils literal notranslate"><span class="pre">capture_frames()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.create_video_from_frames"><code class="docutils literal notranslate"><span class="pre">create_video_from_frames()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#VideoCrea.video.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.process_traffic_data"><code class="docutils literal notranslate"><span class="pre">process_traffic_data()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.join_routes_to_traffic"><code class="docutils literal notranslate"><span class="pre">join_routes_to_traffic()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#MapCrea.CirculationDuJour.get_color"><code class="docutils literal notranslate"><span class="pre">get_color()</span></code></a></li>
@@ -85,9 +92,125 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-MapCrea.CirculationDuJour">
-<span id="autres-fonctions"></span><h1>Autres fonctions<a class="headerlink" href="#module-MapCrea.CirculationDuJour" title="Lien vers cette rubrique"></a></h1>
+  <section id="module-VideoCrea.video">
+<span id="autres-fonctions"></span><h1>Autres fonctions<a class="headerlink" href="#module-VideoCrea.video" title="Lien vers cette rubrique"></a></h1>
 <dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.load_data">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.load_data" title="Lien vers cette définition"></a></dt>
+<dd><p>Charge et filtre les données pour une date spécifique.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>date</strong> (<em>str</em>) – La date au format “YYYY-MM-DD”.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Un dataframe filtré contenant les trajets pour cette date.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.create_graph">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">create_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">place_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Montpellier,</span> <span class="pre">France'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#create_graph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.create_graph" title="Lien vers cette définition"></a></dt>
+<dd><p>Crée un graphe des routes pour une zone donnée.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>place_name</strong> (<em>str</em>) – Le nom de l’endroit.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Le graphe des routes.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>networkx.MultiDiGraph</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.process_trajets">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">process_trajets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">course</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#process_trajets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.process_trajets" title="Lien vers cette définition"></a></dt>
+<dd><p>Traite les trajets pour générer les fonctionnalités GeoJSON nécessaires à l’animation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>course</strong> (<em>pd.DataFrame</em>) – Les trajets filtrés.</p></li>
+<li><p><strong>graph</strong> (<em>networkx.MultiDiGraph</em>) – Le graphe des routes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Une liste de fonctionnalités GeoJSON.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.create_map">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">create_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[43.610769,</span> <span class="pre">3.876716]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#create_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.create_map" title="Lien vers cette définition"></a></dt>
+<dd><p>Crée une carte interactive avec des trajets animés.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>list</em>) – Les fonctionnalités GeoJSON.</p></li>
+<li><p><strong>center_coords</strong> (<em>list</em>) – Coordonnées centrales de la carte.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Une carte interactive.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>folium.Map</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.capture_frames">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">capture_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">map_base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'frames'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#capture_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.capture_frames" title="Lien vers cette définition"></a></dt>
+<dd><p>Capture les frames de la carte pour générer une vidéo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>map_base</strong> (<em>folium.Map</em>) – La carte interactive.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – Répertoire pour stocker les frames.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Le chemin du répertoire contenant les frames.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.create_video_from_frames">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">create_video_from_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#create_video_from_frames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.create_video_from_frames" title="Lien vers cette définition"></a></dt>
+<dd><p>Crée une vidéo à partir des images capturées.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>frame_dir</strong> (<em>str</em>) – Chemin du répertoire contenant les images PNG.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>La vidéo est enregistrée sous le nom “output_video.mp4”.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="VideoCrea.video.main">
+<span class="sig-prename descclassname"><span class="pre">VideoCrea.video.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/VideoCrea/video.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#VideoCrea.video.main" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function" id="module-MapCrea.CirculationDuJour">
 <dt class="sig sig-object py" id="MapCrea.CirculationDuJour.process_traffic_data">
 <span class="sig-prename descclassname"><span class="pre">MapCrea.CirculationDuJour.</span></span><span class="sig-name descname"><span class="pre">process_traffic_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/MapCrea/CirculationDuJour.html#process_traffic_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MapCrea.CirculationDuJour.process_traffic_data" title="Lien vers cette définition"></a></dt>
 <dd><p>Traite les données de trafic et crée un GeoDataFrame.</p>
