@@ -35,6 +35,6 @@ Pour le fichier *CirculationDuJour.py*  on a :
 
 Pour le fichier *video.py*  on a : 
 
-- Mémoire maximale utilisée : environ 600 Mo 
+- Mémoire maximale utilisée : environ 2900 Mo 
 
-- Durée totale d'exécution : environ 130 secondes.
+- Durée totale d'exécution : environ 230 secondes.
