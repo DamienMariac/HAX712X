@@ -28,7 +28,7 @@ Pour le fichier *CirculationDuJour.py*  on a :
 
 - Durée totale d'exécution : Environ 5 secondes.
 
-.. figure:: Image/video.png
+.. figure:: Image/video_finale.png
    :alt: Graphique 2
    :width: 600px
    :name: image2
