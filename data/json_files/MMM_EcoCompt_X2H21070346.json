@@ -1,1 +1,1 @@
-{"intensity":290,"laneId":243439664,"dateObserved":"2025-03-04T00:00:00/2025-03-05T00:00:00","location":{"coordinates":[3.913031,43.671214],"type":"Point"},"id":"MMM_EcoCompt_X2H21070346_202503040000","type":"TrafficFlowObserved","vehicleType":"bicycle","reversedLane":false}
+{"intensity":287,"laneId":243439664,"dateObserved":"2025-03-05T00:00:00/2025-03-06T00:00:00","location":{"coordinates":[3.913031,43.671214],"type":"Point"},"id":"MMM_EcoCompt_X2H21070346_202503050000","type":"TrafficFlowObserved","vehicleType":"bicycle","reversedLane":false}
